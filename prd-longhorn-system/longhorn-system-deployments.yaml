@@ -229,7 +229,7 @@ items:
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "3"
+        deployment.kubernetes.io/revision: "1"
         driver.longhorn.io/git-commit: 6856fd35ee1739f517b78be9e1c6df38171be458
         driver.longhorn.io/kubernetes-version: v1.24.16+rke2r1
         driver.longhorn.io/version: v1.4.2
@@ -303,7 +303,7 @@ items:
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "2"
+        deployment.kubernetes.io/revision: "1"
         meta.helm.sh/release-name: longhorn
         meta.helm.sh/release-namespace: longhorn-system
       labels:
@@ -400,16 +400,11 @@ items:
           serviceAccount: longhorn-service-account
           serviceAccountName: longhorn-service-account
           terminationGracePeriodSeconds: 30
-          tolerations:
-            - effect: NoSchedule
-              key: node-role.kubernetes.io/control-plane
-            - effect: NoExecute
-              key: node-role.kubernetes.io/etcd
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "2"
+        deployment.kubernetes.io/revision: "1"
         meta.helm.sh/release-name: longhorn
         meta.helm.sh/release-namespace: longhorn-system
       labels:
@@ -488,16 +483,11 @@ items:
           serviceAccount: longhorn-service-account
           serviceAccountName: longhorn-service-account
           terminationGracePeriodSeconds: 30
-          tolerations:
-            - effect: NoSchedule
-              key: node-role.kubernetes.io/control-plane
-            - effect: NoExecute
-              key: node-role.kubernetes.io/etcd
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "2"
+        deployment.kubernetes.io/revision: "1"
         meta.helm.sh/release-name: longhorn
         meta.helm.sh/release-namespace: longhorn-system
       labels:
@@ -587,16 +577,11 @@ items:
           serviceAccount: longhorn-service-account
           serviceAccountName: longhorn-service-account
           terminationGracePeriodSeconds: 30
-          tolerations:
-            - effect: NoSchedule
-              key: node-role.kubernetes.io/control-plane
-            - effect: NoExecute
-              key: node-role.kubernetes.io/etcd
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "2"
+        deployment.kubernetes.io/revision: "1"
         meta.helm.sh/release-name: longhorn
         meta.helm.sh/release-namespace: longhorn-system
       labels:
@@ -681,16 +666,11 @@ items:
           serviceAccount: longhorn-service-account
           serviceAccountName: longhorn-service-account
           terminationGracePeriodSeconds: 30
-          tolerations:
-            - effect: NoSchedule
-              key: node-role.kubernetes.io/control-plane
-            - effect: NoExecute
-              key: node-role.kubernetes.io/etcd
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
       annotations:
-        deployment.kubernetes.io/revision: "2"
+        deployment.kubernetes.io/revision: "1"
         meta.helm.sh/release-name: longhorn
         meta.helm.sh/release-namespace: longhorn-system
       labels:
@@ -759,11 +739,6 @@ items:
           schedulerName: default-scheduler
           securityContext: {}
           terminationGracePeriodSeconds: 30
-          tolerations:
-            - effect: NoSchedule
-              key: node-role.kubernetes.io/control-plane
-            - effect: NoExecute
-              key: node-role.kubernetes.io/etcd
           volumes:
             - emptyDir: {}
               name: nginx-cache

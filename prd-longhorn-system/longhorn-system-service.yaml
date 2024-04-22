@@ -13,9 +13,9 @@ items:
       name: csi-attacher
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.168.231
+      clusterIP: 172.24.160.60
       clusterIPs:
-        - 172.22.168.231
+        - 172.24.160.60
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -42,9 +42,9 @@ items:
       name: csi-provisioner
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.178.15
+      clusterIP: 172.24.170.53
       clusterIPs:
-        - 172.22.178.15
+        - 172.24.170.53
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -71,9 +71,9 @@ items:
       name: csi-resizer
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.183.39
+      clusterIP: 172.24.176.20
       clusterIPs:
-        - 172.22.183.39
+        - 172.24.176.20
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -100,9 +100,9 @@ items:
       name: csi-snapshotter
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.160.202
+      clusterIP: 172.24.162.67
       clusterIPs:
-        - 172.22.160.202
+        - 172.24.162.67
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -132,9 +132,9 @@ items:
       name: longhorn-admission-webhook
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.176.194
+      clusterIP: 172.24.168.51
       clusterIPs:
-        - 172.22.176.194
+        - 172.24.168.51
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -167,9 +167,9 @@ items:
       name: longhorn-backend
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.172.73
+      clusterIP: 172.24.189.2
       clusterIPs:
-        - 172.22.172.73
+        - 172.24.189.2
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -202,9 +202,9 @@ items:
       name: longhorn-conversion-webhook
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.164.116
+      clusterIP: 172.24.168.219
       clusterIPs:
-        - 172.22.164.116
+        - 172.24.168.219
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -264,9 +264,9 @@ items:
       name: longhorn-frontend
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.188.101
+      clusterIP: 172.24.184.227
       clusterIPs:
-        - 172.22.188.101
+        - 172.24.184.227
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4
@@ -296,9 +296,9 @@ items:
       name: longhorn-recovery-backend
       namespace: longhorn-system
     spec:
-      clusterIP: 172.22.188.216
+      clusterIP: 172.24.161.210
       clusterIPs:
-        - 172.22.188.216
+        - 172.24.161.210
       internalTrafficPolicy: Cluster
       ipFamilies:
         - IPv4

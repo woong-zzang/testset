@@ -21,9 +21,9 @@ items:
                     - /bin/sh
                     - -c
                     - |
-                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-361d9bfc-5b2c-4015-bdfe-03d11b994eab?action=trimFilesystem
-                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-0c9e8ea1-cf07-425a-bae1-c6e550a142a3?action=trimFilesystem
-                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-0dfe853b-b4a8-4231-993c-8e84d8a202b4?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-7c302904-29d4-407d-83c5-a31870b85c59?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-8bfd43cd-bf52-4e21-b7c6-ce479eaf0541?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-c9844240-7802-41b4-8a75-039b461c58a4?action=trimFilesystem
                   image: rancher/curl
                   imagePullPolicy: IfNotPresent
                   name: cron-kafka-trim
@@ -35,7 +35,7 @@ items:
               schedulerName: default-scheduler
               securityContext: {}
               terminationGracePeriodSeconds: 30
-      schedule: 0 * * * *
+      schedule: '*/30 * * * *'
       successfulJobsHistoryLimit: 3
       suspend: false
 kind: List
