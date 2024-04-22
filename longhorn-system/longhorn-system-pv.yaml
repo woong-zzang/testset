@@ -1,0 +1,1699 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      finalizers:
+        - kubernetes.io/pv-protection
+      labels:
+        velero.io/backup-name: dev-backup
+        velero.io/restore-name: dev-restore
+      name: comimages-pv
+    spec:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 2Gi
+      nfs:
+        path: /ec_comimage
+        server: 192.168.13.30
+      persistentVolumeReclaimPolicy: Retain
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      finalizers:
+        - kubernetes.io/pv-protection
+      labels:
+        velero.io/backup-name: dev-backup
+        velero.io/restore-name: dev-restore
+      name: custimages-pv
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      nfs:
+        path: /ec_custimage
+        server: 192.168.13.30
+      persistentVolumeReclaimPolicy: Retain
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-0173274a-8037-401e-91cb-c60303dfd689
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-1
+        namespace: nsm-front-redis
+        resourceVersion: "54645995"
+        uid: 0173274a-8037-401e-91cb-c60303dfd689
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-0173274a-8037-401e-91cb-c60303dfd689
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-0c9e8ea1-cf07-425a-bae1-c6e550a142a3
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 50Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-kafka-1
+        namespace: zcp-system
+        resourceVersion: "183643690"
+        uid: 0c9e8ea1-cf07-425a-bae1-c6e550a142a3
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-0c9e8ea1-cf07-425a-bae1-c6e550a142a3
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-0dfe853b-b4a8-4231-993c-8e84d8a202b4
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 50Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-kafka-2
+        namespace: zcp-system
+        resourceVersion: "183643709"
+        uid: 0dfe853b-b4a8-4231-993c-8e84d8a202b4
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-0dfe853b-b4a8-4231-993c-8e84d8a202b4
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-1e662bc8-1a31-4052-b04c-dac76fbdf065
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-zookeeper-0
+        namespace: nsm-front-kafka
+        resourceVersion: "685066"
+        uid: 1e662bc8-1a31-4052-b04c-dac76fbdf065
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-1e662bc8-1a31-4052-b04c-dac76fbdf065
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-24cd39a7-ba7f-459b-aa5e-71889fb5bd4d
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsmall-gw-postgresql-0
+        namespace: apim
+        resourceVersion: "684559"
+        uid: 24cd39a7-ba7f-459b-aa5e-71889fb5bd4d
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-24cd39a7-ba7f-459b-aa5e-71889fb5bd4d
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-2da943e2-70f8-43be-9ded-830c64fd5baf
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-4
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856550"
+        uid: 2da943e2-70f8-43be-9ded-830c64fd5baf
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-2da943e2-70f8-43be-9ded-830c64fd5baf
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-361d9bfc-5b2c-4015-bdfe-03d11b994eab
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 50Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-kafka-0
+        namespace: zcp-system
+        resourceVersion: "183643670"
+        uid: 361d9bfc-5b2c-4015-bdfe-03d11b994eab
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-361d9bfc-5b2c-4015-bdfe-03d11b994eab
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-3696288d-b592-43de-91dd-9dddef80d49e
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-zookeeper-2
+        namespace: zcp-system
+        resourceVersion: "183643710"
+        uid: 3696288d-b592-43de-91dd-9dddef80d49e
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-3696288d-b592-43de-91dd-9dddef80d49e
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-3698a357-05c1-48c9-9a06-4f3c8edb9674
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-psyong-network-test-postgresql-0
+        namespace: default
+        resourceVersion: "684700"
+        uid: 3698a357-05c1-48c9-9a06-4f3c8edb9674
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-3698a357-05c1-48c9-9a06-4f3c8edb9674
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-3f7e4aee-8aff-45f2-8fd4-90ff6d30a01f
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-5
+        namespace: nsm-front-redis
+        resourceVersion: "54646050"
+        uid: 3f7e4aee-8aff-45f2-8fd4-90ff6d30a01f
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-3f7e4aee-8aff-45f2-8fd4-90ff6d30a01f
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-40c30997-9206-4e06-93df-136349b5c36a
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-1
+        namespace: nsm-front-kafka
+        resourceVersion: "130413891"
+        uid: 40c30997-9206-4e06-93df-136349b5c36a
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-40c30997-9206-4e06-93df-136349b5c36a
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-434404f3-ecd2-4427-8b94-11196e4edb3e
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-3
+        namespace: nsm-front-redis
+        resourceVersion: "54646018"
+        uid: 434404f3-ecd2-4427-8b94-11196e4edb3e
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-434404f3-ecd2-4427-8b94-11196e4edb3e
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-4a0efaf8-87d6-4182-9cb4-bf6b68b7f310
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 20Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-1
+        namespace: nsm-front-kafka
+        resourceVersion: "684995"
+        uid: 4a0efaf8-87d6-4182-9cb4-bf6b68b7f310
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-4a0efaf8-87d6-4182-9cb4-bf6b68b7f310
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-53283bbf-a24b-455b-92c8-6d232560e099
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-zookeeper-1
+        namespace: nsm-front-kafka
+        resourceVersion: "130413905"
+        uid: 53283bbf-a24b-455b-92c8-6d232560e099
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-53283bbf-a24b-455b-92c8-6d232560e099
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-53774410-b10e-409b-9a9f-f0c25143660b
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 20Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-2
+        namespace: nsm-front-kafka
+        resourceVersion: "685024"
+        uid: 53774410-b10e-409b-9a9f-f0c25143660b
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-53774410-b10e-409b-9a9f-f0c25143660b
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-5643f9e7-57ab-4867-9bb3-7f33db5e8d9a
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-zookeeper-1
+        namespace: nsm-front-kafka
+        resourceVersion: "685114"
+        uid: 5643f9e7-57ab-4867-9bb3-7f33db5e8d9a
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-5643f9e7-57ab-4867-9bb3-7f33db5e8d9a
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-5e868254-aacd-4b34-8b89-5810b2d4e6a6
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-1
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856516"
+        uid: 5e868254-aacd-4b34-8b89-5810b2d4e6a6
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-5e868254-aacd-4b34-8b89-5810b2d4e6a6
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-66d86cd8-cdd6-40f2-8bc6-909a4556efe5
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: redis-data-nsmall-gw-redis-master-0
+        namespace: apim
+        resourceVersion: "684625"
+        uid: 66d86cd8-cdd6-40f2-8bc6-909a4556efe5
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-66d86cd8-cdd6-40f2-8bc6-909a4556efe5
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-69d84595-7c07-4d21-ba9a-2411f53b5d09
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: redis-data-nsmall-gw-redis-replicas-1
+        namespace: apim
+        resourceVersion: "684661"
+        uid: 69d84595-7c07-4d21-ba9a-2411f53b5d09
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-69d84595-7c07-4d21-ba9a-2411f53b5d09
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-6e855976-9f75-4159-9597-9fb81861a9c2
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: forward-fluentd-buffer-forward-fluentd-2
+        namespace: zcp-system
+        resourceVersion: "197141303"
+        uid: 6e855976-9f75-4159-9597-9fb81861a9c2
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1710206443033-8081-driver.longhorn.io
+        volumeHandle: pvc-6e855976-9f75-4159-9597-9fb81861a9c2
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: rook-cephfs
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-70e62abe-3015-42a2-9c73-fd6636781ed8
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 20Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-0
+        namespace: nsm-front-kafka
+        resourceVersion: "684963"
+        uid: 70e62abe-3015-42a2-9c73-fd6636781ed8
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-70e62abe-3015-42a2-9c73-fd6636781ed8
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-74f5a154-85f9-442e-9074-0d31e933474e
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-zookeeper-1
+        namespace: zcp-system
+        resourceVersion: "183643689"
+        uid: 74f5a154-85f9-442e-9074-0d31e933474e
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-74f5a154-85f9-442e-9074-0d31e933474e
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-77b7640b-aed8-4b0d-bf83-2449f91f4130
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-0
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856515"
+        uid: 77b7640b-aed8-4b0d-bf83-2449f91f4130
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-77b7640b-aed8-4b0d-bf83-2449f91f4130
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-7d7b7255-7f48-4d90-a0a7-5fb7cae8626c
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-2
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856528"
+        uid: 7d7b7255-7f48-4d90-a0a7-5fb7cae8626c
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-7d7b7255-7f48-4d90-a0a7-5fb7cae8626c
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-87189924-a60d-402c-8161-e394ad027ca5
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: redis-data-nsmall-gw-redis-replicas-2
+        namespace: apim
+        resourceVersion: "684684"
+        uid: 87189924-a60d-402c-8161-e394ad027ca5
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-87189924-a60d-402c-8161-e394ad027ca5
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-89fd0de8-c00a-45cd-a39d-f7a07e3d6b3c
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-zookeeper-0
+        namespace: nsm-front-kafka
+        resourceVersion: "130413880"
+        uid: 89fd0de8-c00a-45cd-a39d-f7a07e3d6b3c
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-89fd0de8-c00a-45cd-a39d-f7a07e3d6b3c
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-92eef6ef-cbf3-49ac-9ec5-b4fd5a3c474b
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 50Mi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: nginx-logs
+        namespace: nginx-example
+        resourceVersion: "124719670"
+        uid: 92eef6ef-cbf3-49ac-9ec5-b4fd5a3c474b
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-92eef6ef-cbf3-49ac-9ec5-b4fd5a3c474b
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-a2381a70-9a95-41c8-b33c-e9dbf7b5e660
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-es-zookeeper-0
+        namespace: zcp-system
+        resourceVersion: "183643671"
+        uid: a2381a70-9a95-41c8-b33c-e9dbf7b5e660
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-a2381a70-9a95-41c8-b33c-e9dbf7b5e660
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-aaa415bf-e1ef-43a4-a2d2-eec7c7c989da
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-4
+        namespace: nsm-front-redis
+        resourceVersion: "54646035"
+        uid: aaa415bf-e1ef-43a4-a2d2-eec7c7c989da
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-aaa415bf-e1ef-43a4-a2d2-eec7c7c989da
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-af7c145b-6b7e-422f-9c6f-41fbb633d6ca
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-apim-redis-cluster-2
+        namespace: apim-db
+        resourceVersion: "5126647"
+        uid: af7c145b-6b7e-422f-9c6f-41fbb633d6ca
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-af7c145b-6b7e-422f-9c6f-41fbb633d6ca
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-b46c6b1e-16a2-4da3-b490-55bd927ce0f3
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-zookeeper-2
+        namespace: nsm-front-kafka
+        resourceVersion: "685162"
+        uid: b46c6b1e-16a2-4da3-b490-55bd927ce0f3
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-b46c6b1e-16a2-4da3-b490-55bd927ce0f3
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-b647cc6b-0eff-4fc8-9355-9696c8827496
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-3
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856539"
+        uid: b647cc6b-0eff-4fc8-9355-9696c8827496
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-b647cc6b-0eff-4fc8-9355-9696c8827496
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-b90e8141-ae03-4110-b000-b4ecceb89b52
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-apim-redis-cluster-0
+        namespace: apim-db
+        resourceVersion: "5126630"
+        uid: b90e8141-ae03-4110-b000-b4ecceb89b52
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-b90e8141-ae03-4110-b000-b4ecceb89b52
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-bb3cfd45-7616-446c-9806-76d4a7e1ba7f
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: forward-fluentd-buffer-forward-fluentd-1
+        namespace: zcp-system
+        resourceVersion: "184919074"
+        uid: bb3cfd45-7616-446c-9806-76d4a7e1ba7f
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-bb3cfd45-7616-446c-9806-76d4a7e1ba7f
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: rook-cephfs
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-c918d196-217c-408f-9318-73d113f16504
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: redis-data-nsmall-gw-redis-replicas-0
+        namespace: apim
+        resourceVersion: "684639"
+        uid: c918d196-217c-408f-9318-73d113f16504
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-c918d196-217c-408f-9318-73d113f16504
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-d294e60a-ad41-442d-818d-dc510144ada4
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-2
+        namespace: nsm-front-kafka
+        resourceVersion: "130413929"
+        uid: d294e60a-ad41-442d-818d-dc510144ada4
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-d294e60a-ad41-442d-818d-dc510144ada4
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-d508b367-0e00-4cc0-878b-20235f0e1f00
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-0
+        namespace: nsm-front-redis
+        resourceVersion: "54645985"
+        uid: d508b367-0e00-4cc0-878b-20235f0e1f00
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-d508b367-0e00-4cc0-878b-20235f0e1f00
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-d7de4795-dadd-4638-925b-9be206a9138a
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-0
+        namespace: nsm-front-kafka
+        resourceVersion: "130413875"
+        uid: d7de4795-dadd-4638-925b-9be206a9138a
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-d7de4795-dadd-4638-925b-9be206a9138a
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-d9b8e823-e6d2-4185-afd9-14046eeb698c
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: redisinsight-pvc
+        namespace: nsm-front-redis
+        resourceVersion: "170378523"
+        uid: d9b8e823-e6d2-4185-afd9-14046eeb698c
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1708550031672-8081-driver.longhorn.io
+        volumeHandle: pvc-d9b8e823-e6d2-4185-afd9-14046eeb698c
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: longhorn
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-dfa38076-e4a1-4b1c-b41d-ce1258bc1f2c
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: jaeger
+        namespace: istio-system
+        resourceVersion: "49236247"
+        uid: dfa38076-e4a1-4b1c-b41d-ce1258bc1f2c
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1696491846215-8081-driver.longhorn.io
+        volumeHandle: pvc-dfa38076-e4a1-4b1c-b41d-ce1258bc1f2c
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: rook-cephfs
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-e87afc1a-762d-44fb-9ee2-0ee579e6c1b5
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-dev-mcp-redis-cluster-5
+        namespace: nsm-mcp-redis
+        resourceVersion: "206856563"
+        uid: e87afc1a-762d-44fb-9ee2-0ee579e6c1b5
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1711076184468-8081-driver.longhorn.io
+        volumeHandle: pvc-e87afc1a-762d-44fb-9ee2-0ee579e6c1b5
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-ea5d3d4f-f8dc-4c5f-a721-89c2f8b03549
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-apim-redis-cluster-1
+        namespace: apim-db
+        resourceVersion: "5126636"
+        uid: ea5d3d4f-f8dc-4c5f-a721-89c2f8b03549
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1692330249427-8081-driver.longhorn.io
+        volumeHandle: pvc-ea5d3d4f-f8dc-4c5f-a721-89c2f8b03549
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-eb5cef4b-aec8-4f8a-9e42-50481800ef93
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 5Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-redis-rdecom-redis-cluster-2
+        namespace: nsm-front-redis
+        resourceVersion: "54646005"
+        uid: eb5cef4b-aec8-4f8a-9e42-50481800ef93
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1697475548024-8081-driver.longhorn.io
+        volumeHandle: pvc-eb5cef4b-aec8-4f8a-9e42-50481800ef93
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-ee4cfc86-808f-4e0c-ba78-86cd965512ef
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 8Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: prometheus-for-istio-server
+        namespace: istio-system
+        resourceVersion: "49236662"
+        uid: ee4cfc86-808f-4e0c-ba78-86cd965512ef
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1696491846215-8081-driver.longhorn.io
+        volumeHandle: pvc-ee4cfc86-808f-4e0c-ba78-86cd965512ef
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: rook-cephfs
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-ee8c6e8b-6f61-4971-879a-673d3c9506c1
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 1Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: data-nsm-front-kafka-rdecom-test-zookeeper-2
+        namespace: nsm-front-kafka
+        resourceVersion: "130413941"
+        uid: ee8c6e8b-6f61-4971-879a-673d3c9506c1
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1704908621171-8081-driver.longhorn.io
+        volumeHandle: pvc-ee8c6e8b-6f61-4971-879a-673d3c9506c1
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: longhorn-zdb-data
+      volumeMode: Filesystem
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      annotations:
+        longhorn.io/volume-scheduling-error: ""
+        pv.kubernetes.io/provisioned-by: driver.longhorn.io
+      finalizers:
+        - kubernetes.io/pv-protection
+        - external-attacher/driver-longhorn-io
+      name: pvc-ffc9527b-1ad8-4cb2-895d-501b283cf9ef
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      capacity:
+        storage: 10Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: forward-fluentd-buffer-forward-fluentd-0
+        namespace: zcp-system
+        resourceVersion: "184913415"
+        uid: ffc9527b-1ad8-4cb2-895d-501b283cf9ef
+      csi:
+        driver: driver.longhorn.io
+        fsType: ext4
+        volumeAttributes:
+          dataLocality: disabled
+          fromBackup: ""
+          fsType: ext4
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          storage.kubernetes.io/csiProvisionerIdentity: 1709736233127-8081-driver.longhorn.io
+        volumeHandle: pvc-ffc9527b-1ad8-4cb2-895d-501b283cf9ef
+      persistentVolumeReclaimPolicy: Retain
+      storageClassName: rook-cephfs
+      volumeMode: Filesystem
+kind: List
+metadata:
+  resourceVersion: ""
