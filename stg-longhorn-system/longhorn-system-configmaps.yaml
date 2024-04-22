@@ -1,0 +1,104 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    data:
+      root-cert.pem: |
+        -----BEGIN CERTIFICATE-----
+        MIIC/TCCAeWgAwIBAgIRAOye+56GCaAVhasww8pRtXUwDQYJKoZIhvcNAQELBQAw
+        GDEWMBQGA1UEChMNY2x1c3Rlci5sb2NhbDAeFw0yMzEwMDUyMzU4MzdaFw0zMzEw
+        MDIyMzU4MzdaMBgxFjAUBgNVBAoTDWNsdXN0ZXIubG9jYWwwggEiMA0GCSqGSIb3
+        DQEBAQUAA4IBDwAwggEKAoIBAQC9UqXh71HZ8FHxo83NH16iWECryPSYJ+rXO5zG
+        R+T8H4b3niPyRp6qGE8nddkX1jDgAg3jmkUBkZab443Ubm6xqgD6tFVvANErKVhf
+        U+omxuHLsJGvn9TuI70BwrHm529K/z64Hy2wv0iYIR4Dbj+n6y0L2s9bf1svRnHA
+        9URg0oiO9Lspd86Mni1lmMyU0uVwzHfRQBPpHAq9itVI1zVwDqZQtrfqp7f/t9GE
+        DsCqa+Sce89GlbfxbA34DiD6+uvMU9BsvN4M+/aigZVebc7lFzYXDBAjk+0k2qRH
+        w/Y1azTxtwyXDB6w+nBatUNSN+M8Lkt/Fr2cniKKgkPl64/VAgMBAAGjQjBAMA4G
+        A1UdDwEB/wQEAwICBDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSZ94rDTo/R
+        rPHLLbp5sD9fmEuMlTANBgkqhkiG9w0BAQsFAAOCAQEAFo15uZvc3JiLLiNQC9mu
+        WtRFG8BNt81i1loNX6YJVJCihJE1+gsl2GXzlESJZQxXodcbFnR7kt2WInyfmLky
+        0Rtj+Bw789XzLBW8hqRF+4wQFCsxTn+m0ntimVfZrd8cYLfaCkng75+IbcO13Itv
+        Ds7EHY0GCrvJEHzX5h12SL/DaBfihsS0thJoi9m1QbDETdT35p0Q+qv8Inbkp8fI
+        XCBuHF6mBb2Q/nxY0ysT+mjPcZ399ZPwY987cxwIGef/sInJBuZdEoVFoJliiC/P
+        2CIfPbMYvfF8sWZJ5nLlCv2k6xKbIDY+QfKHEGoZb8uAHPuj4fQkBOHnRN+/whPk
+        KQ==
+        -----END CERTIFICATE-----
+    kind: ConfigMap
+    metadata:
+      labels:
+        istio.io/config: "true"
+      name: istio-ca-root-cert
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      ca.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIBeTCCAR+gAwIBAgIBADAKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+        cnZlci1jYUAxNjk0NjY1MzMyMB4XDTIzMDkxNDA0MjIxMloXDTMzMDkxMTA0MjIx
+        MlowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTY5NDY2NTMzMjBZMBMGByqG
+        SM49AgEGCCqGSM49AwEHA0IABENZBxC4CSwV8fMe0ugOj0A2DnfUPwOLyzo85jGz
+        rz/m+WOzxc634oriaUlmCMtTFL8jSZmsXtEJMcjAtzDlItKjQjBAMA4GA1UdDwEB
+        /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSNu/nmOYvoTJfaJJke
+        S5U2+5BH9TAKBggqhkjOPQQDAgNIADBFAiA6NAvSQPL99F1Ejv4LrQQuvQCWF3f1
+        Zy832XlN1w9IXAIhAMOPnVeaeAgwPVxVuUfNek2AxXE5jzJMEpgFKDmM6f7R
+        -----END CERTIFICATE-----
+    kind: ConfigMap
+    metadata:
+      annotations:
+        kubernetes.io/description: Contains a CA bundle that can be used to verify the kube-apiserver when using internal endpoints such as the internal service IP or kubernetes.default.svc. No other usage is guaranteed across distributions of Kubernetes clusters.
+      name: kube-root-ca.crt
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      default-setting.yaml: |2-
+
+
+        create-default-disk-labeled-nodes: true
+        default-data-path: /longhorn
+    kind: ConfigMap
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-default-setting
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      storageclass.yaml: |
+        kind: StorageClass
+        apiVersion: storage.k8s.io/v1
+        metadata:
+          name: longhorn
+          annotations:
+            storageclass.kubernetes.io/is-default-class: "true"
+        provisioner: driver.longhorn.io
+        allowVolumeExpansion: true
+        reclaimPolicy: "Delete"
+        volumeBindingMode: Immediate
+        parameters:
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          fromBackup: ""
+          fsType: "ext4"
+          dataLocality: "disabled"
+    kind: ConfigMap
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-storageclass
+      namespace: longhorn-system
+kind: List
+metadata:
+  resourceVersion: ""

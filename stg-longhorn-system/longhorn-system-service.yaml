@@ -1,0 +1,347 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        driver.longhorn.io/git-commit: 6856fd35ee1739f517b78be9e1c6df38171be458
+        driver.longhorn.io/kubernetes-version: v1.24.16+rke2r1
+        driver.longhorn.io/version: v1.4.2
+      labels:
+        app: csi-attacher
+        longhorn.io/managed-by: longhorn-manager
+      name: csi-attacher
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.171.42
+      clusterIPs:
+        - 172.23.171.42
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: dummy
+          port: 12345
+          protocol: TCP
+          targetPort: 12345
+      selector:
+        app: csi-attacher
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        driver.longhorn.io/git-commit: 6856fd35ee1739f517b78be9e1c6df38171be458
+        driver.longhorn.io/kubernetes-version: v1.24.16+rke2r1
+        driver.longhorn.io/version: v1.4.2
+      labels:
+        app: csi-provisioner
+        longhorn.io/managed-by: longhorn-manager
+      name: csi-provisioner
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.189.170
+      clusterIPs:
+        - 172.23.189.170
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: dummy
+          port: 12345
+          protocol: TCP
+          targetPort: 12345
+      selector:
+        app: csi-provisioner
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        driver.longhorn.io/git-commit: 6856fd35ee1739f517b78be9e1c6df38171be458
+        driver.longhorn.io/kubernetes-version: v1.24.16+rke2r1
+        driver.longhorn.io/version: v1.4.2
+      labels:
+        app: csi-resizer
+        longhorn.io/managed-by: longhorn-manager
+      name: csi-resizer
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.175.155
+      clusterIPs:
+        - 172.23.175.155
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: dummy
+          port: 12345
+          protocol: TCP
+          targetPort: 12345
+      selector:
+        app: csi-resizer
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        driver.longhorn.io/git-commit: 6856fd35ee1739f517b78be9e1c6df38171be458
+        driver.longhorn.io/kubernetes-version: v1.24.16+rke2r1
+        driver.longhorn.io/version: v1.4.2
+      labels:
+        app: csi-snapshotter
+        longhorn.io/managed-by: longhorn-manager
+      name: csi-snapshotter
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.162.46
+      clusterIPs:
+        - 172.23.162.46
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: dummy
+          port: 12345
+          protocol: TCP
+          targetPort: 12345
+      selector:
+        app: csi-snapshotter
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: longhorn-admission-webhook
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.160.119
+      clusterIPs:
+        - 172.23.160.119
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: admission-webhook
+          port: 9443
+          protocol: TCP
+          targetPort: admission-wh
+      selector:
+        app: longhorn-admission-webhook
+      sessionAffinity: ClientIP
+      sessionAffinityConfig:
+        clientIP:
+          timeoutSeconds: 10800
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: longhorn-manager
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-backend
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.175.237
+      clusterIPs:
+        - 172.23.175.237
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: manager
+          port: 9500
+          protocol: TCP
+          targetPort: manager
+      selector:
+        app: longhorn-manager
+      sessionAffinity: ClientIP
+      sessionAffinityConfig:
+        clientIP:
+          timeoutSeconds: 10800
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: longhorn-conversion-webhook
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-conversion-webhook
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.174.26
+      clusterIPs:
+        - 172.23.174.26
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: conversion-webhook
+          port: 9443
+          protocol: TCP
+          targetPort: conversion-wh
+      selector:
+        app: longhorn-conversion-webhook
+      sessionAffinity: ClientIP
+      sessionAffinityConfig:
+        clientIP:
+          timeoutSeconds: 10800
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-engine-manager
+      namespace: longhorn-system
+    spec:
+      clusterIP: None
+      clusterIPs:
+        - None
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      selector:
+        longhorn.io/component: instance-manager
+        longhorn.io/instance-manager-type: engine
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: longhorn-ui
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-frontend
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.181.176
+      clusterIPs:
+        - 172.23.181.176
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: http
+          port: 80
+          protocol: TCP
+          targetPort: http
+      selector:
+        app: longhorn-ui
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: longhorn-recovery-backend
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+    spec:
+      clusterIP: 172.23.181.121
+      clusterIPs:
+        - 172.23.181.121
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: recovery-backend
+          port: 9600
+          protocol: TCP
+          targetPort: recov-backend
+      selector:
+        app: longhorn-recovery-backend
+      sessionAffinity: ClientIP
+      sessionAffinityConfig:
+        clientIP:
+          timeoutSeconds: 10800
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-replica-manager
+      namespace: longhorn-system
+    spec:
+      clusterIP: None
+      clusterIPs:
+        - None
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      selector:
+        longhorn.io/component: instance-manager
+        longhorn.io/instance-manager-type: replica
+      sessionAffinity: None
+      type: ClusterIP
+kind: List
+metadata:
+  resourceVersion: ""
