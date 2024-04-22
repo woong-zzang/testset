@@ -1,0 +1,172 @@
+apiVersion: v1
+items:
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nfs-subdir-external-provisioner
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: nfs-subdir-external-provisioner
+        app.kubernetes.io/managed-by: Helm
+        chart: nfs-subdir-external-provisioner-4.0.18
+        heritage: Helm
+        release: nfs-subdir-external-provisioner
+      name: es-cold
+    parameters:
+      archiveOnDelete: "true"
+    provisioner: cluster.local/nfs-subdir-external-provisioner
+    reclaimPolicy: Retain
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        longhorn.io/last-applied-configmap: |
+          kind: StorageClass
+          apiVersion: storage.k8s.io/v1
+          metadata:
+            name: longhorn
+            annotations:
+              storageclass.kubernetes.io/is-default-class: "true"
+          provisioner: driver.longhorn.io
+          allowVolumeExpansion: true
+          reclaimPolicy: "Delete"
+          volumeBindingMode: Immediate
+          parameters:
+            numberOfReplicas: "3"
+            staleReplicaTimeout: "30"
+            fromBackup: ""
+            fsType: "ext4"
+            dataLocality: "disabled"
+        storageclass.kubernetes.io/is-default-class: "true"
+      name: longhorn
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nfs-subdir-external-provisioner2
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app: nfs-subdir-external-provisioner
+        app.kubernetes.io/managed-by: Helm
+        chart: nfs-subdir-external-provisioner-4.0.18
+        heritage: Helm
+        release: nfs-subdir-external-provisioner2
+      name: longhorn-backup
+    parameters:
+      archiveOnDelete: "true"
+    provisioner: cluster.local/nfs-subdir-external-provisioner2
+    reclaimPolicy: Retain
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"false"},"name":"longhorn-retain"},"parameters":{"dataLocality":"disabled","fromBackup":"","fsType":"ext4","numberOfReplicas":"3","staleReplicaTimeout":"30"},"provisioner":"driver.longhorn.io","reclaimPolicy":"Retain","volumeBindingMode":"Immediate"}
+        storageclass.kubernetes.io/is-default-class: "false"
+      name: longhorn-retain
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Retain
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"nfs-storageclass"},"parameters":{"archiveOnDelete":"false"},"provisioner":"nfs-test"}
+      labels:
+        velero.io/backup-name: velerotest
+        velero.io/restore-name: velerotest-restore
+      name: nfs-storageclass
+    parameters:
+      archiveOnDelete: "false"
+    provisioner: nfs-test
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"rook-ceph-block"},"parameters":{"dataLocality":"disabled","fromBackup":"","fsType":"ext4","numberOfReplicas":"3","staleReplicaTimeout":"30"},"provisioner":"driver.longhorn.io","reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+      name: rook-ceph-block
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"rook-ceph-bucket"},"parameters":{"dataLocality":"disabled","fromBackup":"","fsType":"ext4","numberOfReplicas":"3","staleReplicaTimeout":"30"},"provisioner":"driver.longhorn.io","reclaimPolicy":"Retain","volumeBindingMode":"Immediate"}
+      name: rook-ceph-bucket
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Retain
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: rook-cephfs
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+  - allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: rook-cephfs-retain
+    parameters:
+      dataLocality: disabled
+      fromBackup: ""
+      fsType: ext4
+      numberOfReplicas: "3"
+      staleReplicaTimeout: "30"
+    provisioner: driver.longhorn.io
+    reclaimPolicy: Retain
+    volumeBindingMode: Immediate
+kind: List
+metadata:
+  resourceVersion: ""

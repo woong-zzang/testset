@@ -1,0 +1,97 @@
+apiVersion: v1
+items:
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "21"
+        field.cattle.io/publicEndpoints: '[{"addresses":["172.21.9.11","172.21.9.12","172.21.9.13","172.21.9.21","172.21.9.22","172.21.9.23","172.21.9.31","172.21.9.32","172.21.9.33","172.21.9.41","172.21.9.42","172.21.9.43","172.21.9.51","172.21.9.52","172.21.9.61","172.21.9.62","172.21.9.63"],"port":80,"protocol":"HTTP","serviceName":"minio:minio-api-service","ingressName":"minio:api-server-ingress","hostname":"nsm-cloud-minio-api.nsmall.com","path":"/","allNodes":false},{"addresses":["172.21.9.11","172.21.9.12","172.21.9.13","172.21.9.21","172.21.9.22","172.21.9.23","172.21.9.31","172.21.9.32","172.21.9.33","172.21.9.41","172.21.9.42","172.21.9.43","172.21.9.51","172.21.9.52","172.21.9.61","172.21.9.62","172.21.9.63"],"port":80,"protocol":"HTTP","serviceName":"minio:minio-service","ingressName":"minio:minio-server-ingress","hostname":"nsm-cloud-minio-s3.nsmall.com","path":"/","allNodes":false}]'
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"minio","namespace":"minio"},"spec":{"selector":{"matchLabels":{"role":"osd"}},"strategy":{"type":"Recreate"},"template":{"metadata":{"labels":{"role":"osd"}},"spec":{"containers":[{"args":["server","/data","--console-address",":9090"],"env":[{"name":"MINIO_ROOT_USER","value":"nshadmin"},{"name":"MINIO_ROOT_PASSWORD","value":"ns@123456"}],"image":"v2-zcr.cloudzcp.io/osc/minio/minio:RELEASE.2022-10-24T18-35-07Z","livenessProbe":{"httpGet":{"path":"/minio/health/live","port":9000},"initialDelaySeconds":120,"periodSeconds":20},"name":"minio","ports":[{"containerPort":9000}],"readinessProbe":{"httpGet":{"path":"/minio/health/ready","port":9000},"initialDelaySeconds":120,"periodSeconds":20},"volumeMounts":[{"mountPath":"/data","name":"pvc-af7a35e9-5eda-44b0-9db9-f9839366dc24"}]}],"nodeSelector":{"role":"osd"},"volumes":[{"name":"pvc-af7a35e9-5eda-44b0-9db9-f9839366dc24","persistentVolumeClaim":{"claimName":"minio-pv-claim"}}]}}}}
+      name: minio
+      namespace: minio
+    spec:
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          role: osd
+      template:
+        metadata:
+          annotations:
+            kubectl.kubernetes.io/restartedAt: "2024-03-15T11:25:00+09:00"
+          creationTimestamp: null
+          labels:
+            role: osd
+        spec:
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: role
+                        operator: In
+                        values:
+                          - master
+          containers:
+            - args:
+                - server
+                - /data
+                - --console-address
+                - :9090
+              env:
+                - name: MINIO_ROOT_USER
+                  value: nshadmin
+                - name: MINIO_ROOT_PASSWORD
+                  value: ns@123456
+              image: v2-zcr.cloudzcp.io/osc/minio/minio:RELEASE.2022-10-24T18-35-07Z
+              imagePullPolicy: IfNotPresent
+              livenessProbe:
+                failureThreshold: 3
+                httpGet:
+                  path: /minio/health/live
+                  port: 9000
+                  scheme: HTTP
+                initialDelaySeconds: 120
+                periodSeconds: 20
+                successThreshold: 1
+                timeoutSeconds: 1
+              name: minio
+              ports:
+                - containerPort: 9000
+                  protocol: TCP
+              readinessProbe:
+                failureThreshold: 3
+                httpGet:
+                  path: /minio/health/ready
+                  port: 9000
+                  scheme: HTTP
+                initialDelaySeconds: 120
+                periodSeconds: 20
+                successThreshold: 1
+                timeoutSeconds: 1
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /data
+                  name: pvc-af7a35e9-5eda-44b0-9db9-f9839366dc24
+          dnsPolicy: ClusterFirst
+          nodeSelector:
+            role: master
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          tolerations:
+            - operator: Exists
+          volumes:
+            - name: pvc-af7a35e9-5eda-44b0-9db9-f9839366dc24
+              persistentVolumeClaim:
+                claimName: minio-pv-claim
+            - name: pvc-dd15bae8-d96e-4931-a40b-52b646e1f3a4
+              persistentVolumeClaim:
+                claimName: minio-pv-claim
+kind: List
+metadata:
+  resourceVersion: ""

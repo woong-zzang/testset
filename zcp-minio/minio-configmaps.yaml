@@ -1,0 +1,24 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    data:
+      ca.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIBeTCCAR+gAwIBAgIBADAKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+        cnZlci1jYUAxNjkxNDc3MjY5MB4XDTIzMDgwODA2NDc0OVoXDTMzMDgwNTA2NDc0
+        OVowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTY5MTQ3NzI2OTBZMBMGByqG
+        SM49AgEGCCqGSM49AwEHA0IABFy3+0agdzmScPO/1UsPD3fX/SvzvcX6nYNHFdDe
+        Ftu8JR6qh2aCzMjYxVgblAJjji+b/IDQrv+CaWaCoNTeSJejQjBAMA4GA1UdDwEB
+        /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRw8GVExxGYT9Hiyf9q
+        +UbYGlhuNjAKBggqhkjOPQQDAgNIADBFAiEA/NhppLHS43fh8m2HfSgkQOxslffL
+        a6ekMkRfdz9pvxYCICASYjQVnowZtpcSLg4bBWlmOXdsLwMPQThJ6lY/iLKO
+        -----END CERTIFICATE-----
+    kind: ConfigMap
+    metadata:
+      annotations:
+        kubernetes.io/description: Contains a CA bundle that can be used to verify the kube-apiserver when using internal endpoints such as the internal service IP or kubernetes.default.svc. No other usage is guaranteed across distributions of Kubernetes clusters.
+      name: kube-root-ca.crt
+      namespace: minio
+kind: List
+metadata:
+  resourceVersion: ""

@@ -1,0 +1,102 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    data:
+      ca.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIBeTCCAR+gAwIBAgIBADAKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+        cnZlci1jYUAxNjkxNDc3MjY5MB4XDTIzMDgwODA2NDc0OVoXDTMzMDgwNTA2NDc0
+        OVowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTY5MTQ3NzI2OTBZMBMGByqG
+        SM49AgEGCCqGSM49AwEHA0IABFy3+0agdzmScPO/1UsPD3fX/SvzvcX6nYNHFdDe
+        Ftu8JR6qh2aCzMjYxVgblAJjji+b/IDQrv+CaWaCoNTeSJejQjBAMA4GA1UdDwEB
+        /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRw8GVExxGYT9Hiyf9q
+        +UbYGlhuNjAKBggqhkjOPQQDAgNIADBFAiEA/NhppLHS43fh8m2HfSgkQOxslffL
+        a6ekMkRfdz9pvxYCICASYjQVnowZtpcSLg4bBWlmOXdsLwMPQThJ6lY/iLKO
+        -----END CERTIFICATE-----
+    kind: ConfigMap
+    metadata:
+      annotations:
+        kubernetes.io/description: Contains a CA bundle that can be used to verify the kube-apiserver when using internal endpoints such as the internal service IP or kubernetes.default.svc. No other usage is guaranteed across distributions of Kubernetes clusters.
+      name: kube-root-ca.crt
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      default-setting.yaml: |2-
+
+
+        create-default-disk-labeled-nodes: true
+        default-data-path: /longhorn
+    kind: ConfigMap
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-default-setting
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      storageclass.yaml: |
+        kind: StorageClass
+        apiVersion: storage.k8s.io/v1
+        metadata:
+          name: longhorn
+          annotations:
+            storageclass.kubernetes.io/is-default-class: "true"
+        provisioner: driver.longhorn.io
+        allowVolumeExpansion: true
+        reclaimPolicy: "Delete"
+        volumeBindingMode: Immediate
+        parameters:
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          fromBackup: ""
+          fsType: "ext4"
+          dataLocality: "disabled"
+    kind: ConfigMap
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-storageclass
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      0XTIQNIL: '{"24:Linux NFSv4.1 hqpcclog01":[],"24:Linux NFSv4.1 hqpcclog02":[],"24:Linux NFSv4.1 hqpcclog03":[]}'
+    kind: ConfigMap
+    metadata:
+      annotations:
+        version: 0XTIQNIL
+      labels:
+        longhorn.io/component: share-manager-configmap
+        longhorn.io/managed-by: longhorn-manager
+        longhorn.io/share-manager: pvc-63d2530e-a505-48f0-a3c0-ba24b5cfcaf6
+      name: recovery-backend-share-manager-pvc-63d2530e-a505-48f0-a3c0-ba24b5cfcaf6
+      namespace: longhorn-system
+  - apiVersion: v1
+    data:
+      MGR2AY44: '{"24:Linux NFSv4.1 hqpccmgt01":[]}'
+    kind: ConfigMap
+    metadata:
+      annotations:
+        version: MGR2AY44
+      labels:
+        longhorn.io/component: share-manager-configmap
+        longhorn.io/managed-by: longhorn-manager
+        longhorn.io/share-manager: pvc-b923df83-0825-4c90-af72-493e87bb8a40
+      name: recovery-backend-share-manager-pvc-b923df83-0825-4c90-af72-493e87bb8a40
+      namespace: longhorn-system
+kind: List
+metadata:
+  resourceVersion: ""

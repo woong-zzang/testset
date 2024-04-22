@@ -1,0 +1,5310 @@
+apiVersion: v1
+items:
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: apim-admin-sa-crb
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: apim-admin-sa
+        namespace: apim-dev
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-4k56zgqw
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-4k56zgqw-restricted-admin-crb-clusters-u-j2n4f
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-4k56zgqwrestricted-admin-crb-clustersgrb-9xsbq
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-4k56zgqwrestricted-admin-crb-clustersgrb-hrtnr
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-4k56zgqwrestricted-admin-crb-clustersgrb-q6zx5
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-bct5rnqg
+      name: c-m-bct5rnqg-restricted-admin-crb-clusters-u-b57b6
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-bct5rnqg
+          uid: bb9e28fe-5daa-4a9d-b447-b880d297861b
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-bct5rnqg
+      name: c-m-bct5rnqg-restricted-admin-crb-clusters-u-j2n4f
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-bct5rnqg
+          uid: bb9e28fe-5daa-4a9d-b447-b880d297861b
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-bct5rnqgrestricted-admin-crb-clustersgrb-9xsbq
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-bct5rnqg
+          uid: bb9e28fe-5daa-4a9d-b447-b880d297861b
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-bct5rnqgrestricted-admin-crb-clustersgrb-q6zx5
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-bct5rnqg
+          uid: bb9e28fe-5daa-4a9d-b447-b880d297861b
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-lx8fqlxd
+      name: c-m-lx8fqlxd-restricted-admin-crb-clusters-u-b57b6
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-lx8fqlxd
+          uid: 08cc66f4-f759-4daf-bd05-387d1f2615a4
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-lx8fqlxd
+      name: c-m-lx8fqlxd-restricted-admin-crb-clusters-u-j2n4f
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-lx8fqlxd
+          uid: 08cc66f4-f759-4daf-bd05-387d1f2615a4
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-lx8fqlxdrestricted-admin-crb-clustersgrb-9xsbq
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-lx8fqlxd
+          uid: 08cc66f4-f759-4daf-bd05-387d1f2615a4
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-lx8fqlxdrestricted-admin-crb-clustersgrb-q6zx5
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-lx8fqlxd
+          uid: 08cc66f4-f759-4daf-bd05-387d1f2615a4
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        restricted-admin-crb-clusters: c-m-m7b8rz54
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-m7b8rz54-restricted-admin-crb-clusters-u-j2n4f
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-m7b8rz54restricted-admin-crb-clustersgrb-9xsbq
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-m7b8rz54restricted-admin-crb-clustersgrb-hrtnr
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: c-m-m7b8rz54restricted-admin-crb-clustersgrb-q6zx5
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-w6b2kqf6restricted-admin-crb-clustersgrb-9xsbq
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-w6b2kqf6
+          uid: b46f8cfe-fbe7-4417-b9c5-b92fc46b7942
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: c-m-w6b2kqf6restricted-admin-crb-clustersgrb-q6zx5
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: Cluster
+          name: c-m-w6b2kqf6
+          uid: b46f8cfe-fbe7-4417-b9c5-b92fc46b7942
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-restricted-admin-cr-clusters
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-canal
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: canal-calico
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: calico-node
+    subjects:
+      - kind: ServiceAccount
+        name: canal
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-canal
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: canal-flannel
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: flannel
+    subjects:
+      - kind: ServiceAccount
+        name: canal
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: fleet-agent-local
+        meta.helm.sh/release-namespace: cattle-fleet-local-system
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5yQvVLDMAzH30VzHNr0K80GDOzljoVjkB2lFXWtnK30Dnp5dy5tOTpABkbZ0u//cQJs+YViYglQQbTocux0J5E/UVlCvi9TznJ3nEIGew41VPDou6QUN+LpgUPNYQsZHEixRkWoToAhiJ7P0zCKfSeniTSPLLlDVU8DkwdY44nU4JaCGiuiSSO25rJkLp9eHHqTPpLSAfoMPFryo+Qdph1UMFsWk2LWrBYFrZrpulzXpV0uCpoUa1sXbrkokVZuPh+gAQ8EFfwpbG6NRvFk7DV7n8Ewb6g5Z2/5KUrXjrX5a5XwDw+DduouJUD1evrGPlM8sqN756QL+kO+ub8+phbdqCb0b/1XAAAA//9fQ4/yJgIAAA
+        objectset.rio.cattle.io/id: fleet-agent-bootstrap-cattle-fleet-local-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        objectset.rio.cattle.io/hash: 362023f752e7f1989d8b652e029bd2c658ae7c44
+      name: cattle-fleet-local-system-fleet-agent-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-fleet-local-system-fleet-agent-role
+    subjects:
+      - kind: ServiceAccount
+        name: fleet-agent
+        namespace: cattle-fleet-local-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-globalrolebinding-cqw74
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: globalrolebinding-cqw74
+          uid: 869a0e9e-b6d4-4ae0-8bb5-bc75fbc26851
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-globalrolebinding-s9sfm
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-m6twq
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-2qfwp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-2sf6v
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-2sf6v
+          uid: 30535676-4b54-401c-a54a-63ab60b1929a
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-view-rancher-metrics
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-bl7pv
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-4kr87
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-nodedrivers-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-4vfzf
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-features-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-5w9qz
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-nodedrivers-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-79h6v
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-nodedrivers-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-87qzq
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-podsecuritypolicytemplates-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-8r48k
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-use
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-9cdgp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b4qkhsnliz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-9fmv7
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-9v4qt
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-9v4qt
+          uid: e4da2df7-73d9-49fd-aa2f-f42380e5cd3e
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b5jq3g6wb5
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-9xsbq
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-restricted-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-bxx7w
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-clusters-create
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-cszbm
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-cszbm
+          uid: eba13751-ac71-47de-ad50-ee12949cb9d2
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b4qkhsnliz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-dcvsb
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-dz9b2
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-users-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-fj8fq
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-use
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-fkrds
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user-base
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-g6sqs
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-view-rancher-metrics
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-gcps7
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-kontainerdrivers-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-gsdxw
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-gsdxw
+          uid: 5cf02f82-d9d9-4bea-9143-1a1fd2002c61
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-bl7pv
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-hdhpm
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-features-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-hgwdf
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-view-rancher-metrics
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-jctw7
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-roles-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-km6br
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-km6br
+          uid: 3bd7d27e-719d-4f5b-b486-86c32b93cde8
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-gr-48lzh
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-bl7pv
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-kzdhc
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-clustertemplates-create
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-lc8fr
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-authn-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-lkwzm
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-lkwzm
+          uid: 0665794d-52a0-4834-93b7-c45b0d2dcffd
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-adgdah4zyl
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-lq5fw
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-features-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-nd98c
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-czfyxoneqz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-q6zx5
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-restricted-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-qbkw8
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-use
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-qhn97
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-view-rancher-metrics
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-rdz6s
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-settings-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-rkf72
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-s7948
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-snwh8
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-clustertemplates-create
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-vrxzt
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-clustertemplates-create
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+      name: cattle-globalrolebinding-grb-wgj97
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: GlobalRoleBinding
+          name: grb-wgj97
+          uid: 30ff12b5-8c21-4857-a388-f2ed3398ae8d
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-7p3tozcrzt
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-wmcs8
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-catalogs-manage
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-x2tb9
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-rkh5tu5roy
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.management.cattle.io/globalrolebinding: "true"
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: cattle-globalrolebinding-grb-xtnkg
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-globalrole-clustertemplaterevisions-create
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.cluster.cattle.io/impersonator: "true"
+        cattle.io/creator: norman
+      name: cattle-impersonation-u-b4qkhsnliz
+      ownerReferences:
+        - apiVersion: rbac.authorization.k8s.io/v1
+          kind: ClusterRole
+          name: cattle-impersonation-u-b4qkhsnliz
+          uid: cf42c79b-5263-4ec2-a45e-d64a8a3e8e1e
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-impersonation-u-b4qkhsnliz
+    subjects:
+      - kind: ServiceAccount
+        name: cattle-impersonation-u-b4qkhsnliz
+        namespace: cattle-impersonation-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.cluster.cattle.io/impersonator: "true"
+        cattle.io/creator: norman
+      name: cattle-impersonation-u-mo773yttt4
+      ownerReferences:
+        - apiVersion: rbac.authorization.k8s.io/v1
+          kind: ClusterRole
+          name: cattle-impersonation-u-mo773yttt4
+          uid: 986b5a90-9e18-4a96-b1d0-8aaf11f782ab
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-impersonation-u-mo773yttt4
+    subjects:
+      - kind: ServiceAccount
+        name: cattle-impersonation-u-mo773yttt4
+        namespace: cattle-impersonation-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SPP0/DMBDFv8vNwdAkJY1XBvaKDTGcz1fF1H8i+zxA1e+OkkgsSBUdn/T0fu93gcCCFgVBXwBjTILiUixLTOaTSQqLyi4pQhHPyqVHZ0HDFh9qxCoTR3GEwhauDVDmdePNBS6CYQYdq/cNeDTsby5PWCbQYNpda/djx13fDUR73D21NPQjkR3odDB9S6Oxz7zQIga+eScnz0c+rX6ze82pzqAhGyS1dFN23+tddT4U5RI0cHZxMXzxtQjnY/IM/+CUukmBfr+XtFV/GeWrCAf9h/Fx/QkAAP//R2hIca8BAAA
+        objectset.rio.cattle.io/id: cattle-unauthenticated
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: b212d593e3437cc5a102c749ccd7cf8b42c9bd6e
+      name: cattle-unauthenticated
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cattle-unauthenticated
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:unauthenticated
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"cephfs-csi-nodeplugin"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cephfs-csi-nodeplugin"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-cephfs-plugin-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: cephfs-csi-nodeplugin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cephfs-csi-nodeplugin
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-cephfs-plugin-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"cephfs-csi-provisioner-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cephfs-external-provisioner-runner"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-cephfs-provisioner-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: cephfs-csi-provisioner-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cephfs-external-provisioner-runner
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-cephfs-provisioner-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cainjector","app.kubernetes.io/component":"cainjector","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cainjector","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-cainjector"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-cainjector"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager-cainjector","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cainjector
+        app.kubernetes.io/component: cainjector
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cainjector
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-cainjector
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-cainjector
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager-cainjector
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"cert-manager","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-approve:cert-manager-io"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-approve:cert-manager-io"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: cert-manager
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-approve:cert-manager-io
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-approve:cert-manager-io
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-certificates"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-certificates"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-certificates
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-certificates
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"cert-manager","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-certificatesigningrequests"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-certificatesigningrequests"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: cert-manager
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-certificatesigningrequests
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-certificatesigningrequests
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-challenges"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-challenges"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-challenges
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-challenges
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-clusterissuers"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-clusterissuers"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-clusterissuers
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-clusterissuers
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-ingress-shim"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-ingress-shim"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-ingress-shim
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-ingress-shim
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-issuers"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-issuers"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-issuers
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-issuers
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"cert-manager","app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"cert-manager","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-controller-orders"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-controller-orders"},"subjects":[{"kind":"ServiceAccount","name":"cert-manager","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: cert-manager
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: cert-manager
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-controller-orders
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-controller-orders
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app":"webhook","app.kubernetes.io/component":"webhook","app.kubernetes.io/instance":"cert-manager","app.kubernetes.io/name":"webhook","app.kubernetes.io/version":"v1.12.3"},"name":"cert-manager-webhook:subjectaccessreviews"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cert-manager-webhook:subjectaccessreviews"},"subjects":[{"apiGroup":"","kind":"ServiceAccount","name":"cert-manager-webhook","namespace":"cert-manager"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: webhook
+        app.kubernetes.io/component: webhook
+        app.kubernetes.io/instance: cert-manager
+        app.kubernetes.io/name: webhook
+        app.kubernetes.io/version: v1.12.3
+      name: cert-manager-webhook:subjectaccessreviews
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cert-manager-webhook:subjectaccessreviews
+    subjects:
+      - kind: ServiceAccount
+        name: cert-manager-webhook
+        namespace: cert-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: cluster-admin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:masters
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: collect
+        meta.helm.sh/release-namespace: logging
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: collect
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: fluent-bit
+        app.kubernetes.io/version: 2.0.8
+        helm.sh/chart: fluent-bit-0.23.0
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: collect-fluent-bit
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: collect-fluent-bit
+    subjects:
+      - kind: ServiceAccount
+        name: collect-fluent-bit
+        namespace: logging
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: console-api
+        meta.helm.sh/release-namespace: console
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        velero.io/backup-name: console-backup
+        velero.io/restore-name: console-backup-20230811163635
+      name: console-api
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: console-api
+        namespace: console
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: cp-prometheus
+        meta.helm.sh/release-namespace: zcp-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: cp-prometheus
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kube-state-metrics
+        helm.sh/chart: kube-state-metrics-2.13.2
+      name: cp-prometheus-kube-state-metrics
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cp-prometheus-kube-state-metrics
+    subjects:
+      - kind: ServiceAccount
+        name: cp-prometheus-kube-state-metrics
+        namespace: zcp-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: cp-prometheus
+        meta.helm.sh/release-namespace: zcp-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: prometheus
+        app.kubernetes.io/managed-by: Helm
+        chart: prometheus-13.8.0
+        component: server
+        heritage: Helm
+        release: cp-prometheus
+      name: cp-prometheus-server
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cp-prometheus-server
+    subjects:
+      - kind: ServiceAccount
+        name: cp-prometheus-server
+        namespace: zcp-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-4k56zgqw
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        p-mtj7m_creator-project-owner: membership-binding-owner
+        p-rdz5v_creator-project-owner: membership-binding-owner
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-3q4xqa74ap
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-m6twq
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-w6b2kqf6
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-w6b2kqf6_crtb-6mnjr: membership-binding-owner
+        c-m-w6b2kqf6_crtb-b7h27: membership-binding-owner
+        c-m-w6b2kqf6_crtb-qgdbn: membership-binding-owner
+        c-m-w6b2kqf6_crtb-v47gf: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-565cxewxwx
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-bl7pv
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-m7b8rz54
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-m7b8rz54_u-czfyxoneqz-admin: membership-binding-owner
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-6fakwjwr4k
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-czfyxoneqz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-w6b2kqf6
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-w6b2kqf6_u-7p3tozcrzt-admin: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-altzgkc5v7
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-7p3tozcrzt
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-lx8fqlxd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-lx8fqlxd_creator-cluster-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-eiicxudpya
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: local
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        local_u-b4qkhsnliz-admin: membership-binding-owner
+      name: crb-f4f5jbljff
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: local-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b4qkhsnliz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-m7b8rz54
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-m7b8rz54_creator-cluster-owner: membership-binding-owner
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-fq53hkta6q
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-m6twq
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-w6b2kqf6
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        p-fvfgn_creator-project-owner: membership-binding-owner
+        p-vml7f_creator-project-owner: membership-binding-owner
+      name: crb-g5i75qrx25
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-lx8fqlxd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-lx8fqlxd_u-b5jq3g6wb5-admin: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-hd7iywzqrw
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b5jq3g6wb5
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-bct5rnqg
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-bct5rnqg_c-m-bct5rnqg-fleet-default-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-ktndduu3il
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-5oq7vmw4ec
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-w6b2kqf6
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-w6b2kqf6_creator-cluster-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-ln7hxigfuc
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-4k56zgqw
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-4k56zgqw_u-rkh5tu5roy-admin: membership-binding-owner
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-nkybsot4sx
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-rkh5tu5roy
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-bct5rnqg
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        p-mf5fv_creator-project-owner: membership-binding-owner
+        p-rcwkt_creator-project-owner: membership-binding-owner
+      name: crb-odrtmqrjqi
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-4k56zgqw
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-4k56zgqw_c-m-4k56zgqw-fleet-default-owner: membership-binding-owner
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-puxjlnfnoc
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-4k56zgqw-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-kvidf4bgni
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-bct5rnqg
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-bct5rnqg_creator-cluster-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-rjexad5k62
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-lx8fqlxd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        p-glz2p_creator-project-owner: membership-binding-owner
+        p-whz26_creator-project-owner: membership-binding-owner
+      name: crb-rk6f33wpda
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.cluster.cattle.io/rtb-owner-updated: local_u-b4qkhsnliz-admin
+        cattle.io/creator: norman
+      name: crb-sxpl5qepks
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-owner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b4qkhsnliz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-lx8fqlxd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-lx8fqlxd_c-m-lx8fqlxd-fleet-default-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-utfrec25j5
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-lx8fqlxd-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-k3kvtn44r7
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-m7b8rz54
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-m7b8rz54_c-m-m7b8rz54-fleet-default-owner: membership-binding-owner
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-veishn77tc
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-5oq7vmw4ec
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-m7b8rz54
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        p-6mbpw_creator-project-owner: membership-binding-owner
+        p-g4bc2_creator-project-owner: membership-binding-owner
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: crb-vsgub5mnec
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-m7b8rz54-clustermember
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-m6twq
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: local
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        local_local-fleet-local-owner: membership-binding-owner
+      name: crb-vssree5kj2
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: local-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-mo773yttt4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        authz.cluster.cattle.io/rtb-owner-updated: local_local-fleet-local-owner
+        cattle.io/creator: norman
+      name: crb-ymn4zyccca
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-owner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-mo773yttt4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-w6b2kqf6
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-w6b2kqf6_c-m-w6b2kqf6-fleet-default-owner: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-yxg5tvw6bu
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-w6b2kqf6-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-kvidf4bgni
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        cluster.cattle.io/name: c-m-bct5rnqg
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        c-m-bct5rnqg_u-adgdah4zyl-admin: membership-binding-owner
+        cattle.io/creator: norman
+      name: crb-zgm2zylly3
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: c-m-bct5rnqg-clusterowner
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-adgdah4zyl
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"csi-provisioner-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"external-provisioner-runner"},"subjects":[{"kind":"ServiceAccount","name":"csi-provisioner","namespace":"kube-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: csi-provisioner-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: external-provisioner-runner
+    subjects:
+      - kind: ServiceAccount
+        name: csi-provisioner
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"csi-snapshotter-provisioner-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"external-provisioner-runner"},"subjects":[{"kind":"ServiceAccount","name":"csi-snapshotter","namespace":"kube-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: csi-snapshotter-provisioner-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: external-provisioner-runner
+    subjects:
+      - kind: ServiceAccount
+        name: csi-snapshotter
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"csi-snapshotter-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"external-snapshotter-runner"},"subjects":[{"kind":"ServiceAccount","name":"csi-snapshotter","namespace":"kube-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: csi-snapshotter-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: external-snapshotter-runner
+    subjects:
+      - kind: ServiceAccount
+        name: csi-snapshotter
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SPMU/DMBBG/8vNjalpCa1XBvaKDTGc3Utj6vgi3xkJqvx3lFSqEAMS40mn9753gYEUj6gI7gKYMytq5Czzyf6dggqpKZFNQNVEJvJdPIKDLhFp45lVtODYLIxpBaHQQniJA4niMILLNaUVJPSU/uT2KD042D7Y9Wa96ezet8FjF/brjbXbnbe7tu1sG+49PSIutowD3cbgibI2J9ImcFbKOn8UTnSgbskb43PhOoKD4jEYrNpziV/LXnPeiYkMKzjHPAc+pSpK5cCJ4JfoB17qNQbc638F19cbWj5FaXBC5SMGwhC4ZhWY3qbvAAAA///yrnHTpQEAAA
+        objectset.rio.cattle.io/id: fleet-bootstrap-data
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: 4510303f19b6cbafc9031148b1866f16c2be7aaa
+        velero.io/backup-name: velerotest
+        velero.io/restore-name: velerotest-restore
+      name: fleet-agent-get-content
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-content
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:serviceaccounts
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: fleet
+        meta.helm.sh/release-namespace: cattle-fleet-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: fleet-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-controller
+    subjects:
+      - kind: ServiceAccount
+        name: fleet-controller
+        namespace: cattle-fleet-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: fleet
+        meta.helm.sh/release-namespace: cattle-fleet-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        velero.io/backup-name: velerotest
+        velero.io/restore-name: velerotest-restore
+      name: fleet-controller-bootstrap
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-controller-bootstrap
+    subjects:
+      - kind: ServiceAccount
+        name: fleet-controller-bootstrap
+        namespace: cattle-fleet-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: fleetworkspace-own-binding-fleet-default
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleetworkspace-own-fleet-default
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:serviceaccount:velero:velero
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: fleetworkspace-own-binding-fleet-local
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleetworkspace-own-fleet-local
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:serviceaccount:velero:velero
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: forward
+        meta.helm.sh/release-namespace: logging
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: forward
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: fluentd
+        app.kubernetes.io/version: v1.16.2
+        helm.sh/chart: fluentd-0.5.0
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: forward-fluentd
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: forward-fluentd
+    subjects:
+      - kind: ServiceAccount
+        name: forward-fluentd
+        namespace: logging
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: fleet
+        meta.helm.sh/release-namespace: cattle-fleet-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: gitjob-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: gitjob
+    subjects:
+      - kind: ServiceAccount
+        name: gitjob
+        namespace: cattle-fleet-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: global-unrestricted-psp-rolebinding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: global-unrestricted-psp-clusterrole
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:authenticated
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: globaladmin-u-j2n4f
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: globaladmin-user-lnms4
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-4xscs-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-4xscs
+          uid: 9f463a21-9f2f-46ff-b3ba-779b544c77ff
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-4xscs-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-4xscs
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-5oq7vmw4ec-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-5oq7vmw4ec
+          uid: 297f0ad3-d578-49dd-a7d0-0451b18fb6c2
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-5oq7vmw4ec-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-5oq7vmw4ec
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-7p3tozcrzt-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-7p3tozcrzt
+          uid: 808dcc81-c0ee-4b0f-9a7b-687462155908
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-7p3tozcrzt-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-7p3tozcrzt
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-adgdah4zyl-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-adgdah4zyl
+          uid: c026bedf-1080-40f7-8321-1a7ecf6a9ad0
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-adgdah4zyl-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-adgdah4zyl
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-b4qkhsnliz-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-b4qkhsnliz
+          uid: 1c049313-243a-4ab0-b3ba-e8b357b07770
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-b4qkhsnliz-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b4qkhsnliz
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-b57b6-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-b57b6
+          uid: 3bda8c7d-bdc8-4e19-b345-459a63b3f642
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-b57b6-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b57b6
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-b5jq3g6wb5-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-b5jq3g6wb5
+          uid: f010b75a-ff4d-43a8-9b2e-04089ea602ba
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-b5jq3g6wb5-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-b5jq3g6wb5
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-bl7pv-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-bl7pv
+          uid: d6edfbbb-bb53-4123-a093-f6be4cf18cec
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-bl7pv-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-bl7pv
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-j2n4f-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-j2n4f
+          uid: 7ecd6147-6599-4260-bd9e-17d5df232f5d
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-j2n4f-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-j2n4f
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-k3kvtn44r7-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-k3kvtn44r7
+          uid: fbc75f0c-1feb-4acc-bb4f-f3b0560115a0
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-k3kvtn44r7-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-k3kvtn44r7
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-kvidf4bgni-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-kvidf4bgni
+          uid: 8bd3438d-ccb7-4a98-b268-aa36897ed5a9
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-kvidf4bgni-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-kvidf4bgni
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-u-mo773yttt4-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: u-mo773yttt4
+          uid: db8cd53f-9f7d-4523-9f93-511d9c5540af
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-mo773yttt4-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-mo773yttt4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: grb-u-rkh5tu5roy-view
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: u-rkh5tu5roy-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: u-rkh5tu5roy
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+      name: grb-user-lnms4-view
+      ownerReferences:
+        - apiVersion: management.cattle.io/v3
+          kind: User
+          name: user-lnms4
+          uid: 91ecc1b3-c291-4e06-8461-cf192c5aac44
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: user-lnms4-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-lnms4
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        cattle.io/creator: norman
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: grb-user-m6twq-view
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: user-m6twq-view
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: user-m6twq
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yRT4/TQAzFvwryORPabUWzkTjAHkDitiAuiIPj8TYm8yeacYKg6ndHky2olWjhOGO9n5/fOwCO8plTlhighdQh1ThpH5P8RJUY6qHJtcSX8xoqGCRYaOHBTVk5PUbHbyVYCXuowLOiRUVoD4AhRF3kuTxj941JM2udJNaEqo4LUwqsZ+cNxaApOsfJUI9JTeK9ZE0LA6qrhPg9cDL7eTiBzkbzunrxQYJ9/Z6dfyjQf3ICei4hDHxnCAO6/1LkEanIhqljk39kZQ/HCijx4v6TeM6KfoQ2TM5V4LBjdzOXHnMPLXT3O0u0I0Zc3VO33TBvtg11m9WTvbO4bZrVjtavmrLtZH0J88yIObvlWEGKjh/5aalolHcpTuOt0v/aOPxZRs+fBq2XUPB5ej4I2i+H38qPnGYhfkMUp6Bw6fQi6atZfj3+CgAA//8qWxuhpgIAAA
+        objectset.rio.cattle.io/id: helm-controller-chart-registration
+        objectset.rio.cattle.io/owner-gvk: helm.cattle.io/v1, Kind=HelmChart
+        objectset.rio.cattle.io/owner-name: rke2-canal
+        objectset.rio.cattle.io/owner-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: b97dcc7ceaa09cb43ee348cb30fd2da48807c168
+      name: helm-kube-system-rke2-canal
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: helm-rke2-canal
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yRT2/TQBDFvwqas9ekoYkTSxygB5C4FcQFcRjvTuLB+8eaHRtBlO+O1i2oRTT0uDt6v3nz3glw5M8kmVOEFqRDW+OkfRL+icop1sMu15xezldQwcDRQQs3fspKcps8veXoOB6hgkCKDhWhPQHGmHSR5/JM3Teymklr4VRbVPVUmFxgPflgbIoqyXsSY3sUNUJHzioLA6onCel7JDHHebgHPRjNV9WLDxzd6/fkw02B/pcTMVAJYaC1sUnIxfwsTR7RFuEwdWTyj6wU4FyBFVr8f+JAWTGM0MbJ+wo8duQvJtNj7qGFg1vTbour7avdCp2z3eraucZuHW02TdPsm/1+s94frsu2e/NLnA+MmEfXnCuQ5OmWDktNI7+TNI2Xiv9n6/Bnnb37NOgCx4LP091J0H45/VZ+JJnZ0htr0xQVHnv9K+0n8/x6/hUAAP//i5FZQawCAAA
+        objectset.rio.cattle.io/id: helm-controller-chart-registration
+        objectset.rio.cattle.io/owner-gvk: helm.cattle.io/v1, Kind=HelmChart
+        objectset.rio.cattle.io/owner-name: rke2-coredns
+        objectset.rio.cattle.io/owner-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: fd2e86a06380addcb04dd7c6de557779799529f4
+      name: helm-kube-system-rke2-coredns
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: helm-rke2-coredns
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yST2/UMBDFvwqacxzY7W63icQBegCJW0FcEIexM02GOONoPAl/VvvdUdKCirQtPdrW+82853cEHPkzaeYkUIN6DCVO1iXlX2icpOyvcsnp5byBAnqWBmq4jlM20psU6S1Lw9JCAQMZNmgI9RFQJNkqz8sx+W8ULJOVyqkMaBZpYfIC6ygOLiQxTTGSutChmlNqOZuuDCgeJaTvQuraub8HPXiaN8WLDyzN6/cUh+sF+l+O4EBLCD1tHUurlLOTluXHs5R5xLDI+8mTyz+z0QCnAoLS6uITD5QNhxFqmWIsIKKn+GQ+HeYOajhUm4vqsjpcUdjeNofG00VT7baXux3t9/iq2uPB+533y7R7C2uoDxZxZzydCtAU6YZu1y8b+Z2maXyqBGcbAH+HhrtLh83AsuDzdGcM6i/HP8qPpDMHehNCmsTg343PJv9otl9PvwMAAP//nhCMYr4CAAA
+        objectset.rio.cattle.io/id: helm-controller-chart-registration
+        objectset.rio.cattle.io/owner-gvk: helm.cattle.io/v1, Kind=HelmChart
+        objectset.rio.cattle.io/owner-name: rke2-ingress-nginx
+        objectset.rio.cattle.io/owner-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: 791396978ec2fd7dbe3d942644e55a095a7bb4bb
+      name: helm-kube-system-rke2-ingress-nginx
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: helm-rke2-ingress-nginx
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yST2/UMBDFvwqacxw2m5YtkThADyBxK4gL4jCxZzdD/CcaT4Jgtd8dOS2oSNulR9t6v5n3/I6AE38hyZwidCA92hpnHZLwL1ROsR5vcs3p5dJABSNHBx3c+jkryV3y9I6j43iACgIpOlSE7ggYY9JVnssx9d/JaiathVNtUdVTYXKBDeSDsSmqJO9JjB1Q1AgdOKusDKieJKQfkcQclvEB9OhpaaoXHzm6Nx/Ih9sC/S8nYqASwkhbE0iFbTaZZCF5ljRPaIt+nHsy+WdWCnCqwAqtNj5zoKwYJuji7H0FHnvyFwMaMA/QAe031/t2c91s2yts2t3O9r1td7SzDl272burhravbl6XaQ8e1lQfLWLOmTpVIMnTHe3XT5v4vaR5ulSDsx2Av1Pt/aVBFzgWfJ7vnUH39fhH+YlkYUtvrU1zVPh35fPZP5nut9PvAAAA//9nmxwtwQIAAA
+        objectset.rio.cattle.io/id: helm-controller-chart-registration
+        objectset.rio.cattle.io/owner-gvk: helm.cattle.io/v1, Kind=HelmChart
+        objectset.rio.cattle.io/owner-name: rke2-metrics-server
+        objectset.rio.cattle.io/owner-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        objectset.rio.cattle.io/hash: ef05f3051234a1377cbbc37e7cdad30fd41e2689
+      name: helm-kube-system-rke2-metrics-server
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: helm-rke2-metrics-server
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        rke2.io/bootstrapping: rbac-defaults
+      name: kube-apiserver-kubelet-admin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:kubelet-api-admin
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: kube-apiserver
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-bind
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: longhorn-role
+    subjects:
+      - kind: ServiceAccount
+        name: longhorn-service-account
+        namespace: longhorn-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: longhorn
+        meta.helm.sh/release-namespace: longhorn-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.4.2
+        helm.sh/chart: longhorn-102.2.1_up1.4.2
+      name: longhorn-support-bundle
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: longhorn-support-bundle
+        namespace: longhorn-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"nfs-provisioner-rolebinding"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"nfs-provisioner-clusterRole"},"subjects":[{"kind":"ServiceAccount","name":"nfs-pod-provisioner-sa","namespace":"default"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: part
+        velero.io/restore-name: part-20230811112118
+      name: nfs-provisioner-rolebinding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nfs-provisioner-clusterRole
+    subjects:
+      - kind: ServiceAccount
+        name: nfs-pod-provisioner-sa
+        namespace: default
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nsm-cloud-argocd
+        meta.helm.sh/release-namespace: nsm-cloud-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: application-controller
+        app.kubernetes.io/instance: nsm-cloud-argocd
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: argocd-application-controller
+        app.kubernetes.io/part-of: argocd
+        helm.sh/chart: argo-cd-4.9.11
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: nsm-cloud-argocd-application-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nsm-cloud-argocd-application-controller
+    subjects:
+      - kind: ServiceAccount
+        name: argocd-application-controller
+        namespace: nsm-cloud-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nsm-cloud-argocd
+        meta.helm.sh/release-namespace: nsm-cloud-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: server
+        app.kubernetes.io/instance: nsm-cloud-argocd
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: argocd-server
+        app.kubernetes.io/part-of: argocd
+        helm.sh/chart: argo-cd-4.9.11
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: nsm-cloud-argocd-server
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nsm-cloud-argocd-server
+    subjects:
+      - kind: ServiceAccount
+        name: argocd-server
+        namespace: nsm-cloud-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nsm-cloud-logging-receiver
+        meta.helm.sh/release-namespace: nsm-cloud-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: nsm-cloud-logging-receiver
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: fluentd
+        app.kubernetes.io/version: v1.16.2
+        helm.sh/chart: fluentd-0.5.0
+      name: nsm-cloud-logging-receiver-fluentd
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nsm-cloud-logging-receiver-fluentd
+    subjects:
+      - kind: ServiceAccount
+        name: nsm-cloud-logging-receiver-fluentd
+        namespace: nsm-cloud-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nsm-cloud-monitoring
+        meta.helm.sh/release-namespace: nsm-cloud-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: nsm-cloud-monitoring
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: grafana
+        app.kubernetes.io/version: 10.3.1
+        helm.sh/chart: grafana-7.3.0
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: nsm-cloud-monitoring-grafana-clusterrolebinding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nsm-cloud-monitoring-grafana-clusterrole
+    subjects:
+      - kind: ServiceAccount
+        name: nsm-cloud-monitoring-grafana
+        namespace: nsm-cloud-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: platform-argocd
+        meta.helm.sh/release-namespace: argocd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: application-controller
+        app.kubernetes.io/instance: platform-argocd
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: argocd-application-controller
+        app.kubernetes.io/part-of: argocd
+        helm.sh/chart: argo-cd-4.9.11
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: platform-argocd-application-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: platform-argocd-application-controller
+    subjects:
+      - kind: ServiceAccount
+        name: argocd-application-controller
+        namespace: argocd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: platform-argocd
+        meta.helm.sh/release-namespace: argocd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: server
+        app.kubernetes.io/instance: platform-argocd
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: argocd-server
+        app.kubernetes.io/part-of: argocd
+        helm.sh/chart: argo-cd-4.9.11
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: platform-argocd-server
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: platform-argocd-server
+    subjects:
+      - kind: ServiceAccount
+        name: argocd-server
+        namespace: argocd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: private-ingress-nginx
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: private-ingress-nginx
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/part-of: ingress-nginx
+        app.kubernetes.io/version: 1.6.4
+        helm.sh/chart: ingress-nginx-4.5.2
+      name: private-ingress-nginx
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: private-ingress-nginx
+    subjects:
+      - kind: ServiceAccount
+        name: private-ingress-nginx
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rancher
+        meta.helm.sh/release-namespace: cattle-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: rancher
+        app.kubernetes.io/managed-by: Helm
+        chart: rancher-2.7.3
+        heritage: Helm
+        release: rancher
+      name: rancher
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: rancher
+        namespace: cattle-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rancher-backup
+        meta.helm.sh/release-namespace: cattle-resources-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: rancher-backup
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: rancher-backup
+        app.kubernetes.io/version: 3.1.2
+        helm.sh/chart: rancher-backup-102.0.2_up3.1.2
+        resources.cattle.io/operator: backup-restore
+        velero.io/backup-name: cp-backup
+        velero.io/restore-name: cp-restore
+      name: rancher-backup
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: rancher-backup
+        namespace: cattle-resources-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rancher-webhook
+        meta.helm.sh/release-namespace: cattle-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: rancher-webhook
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: rancher-webhook
+        namespace: cattle-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rbd-csi-nodeplugin"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rbd-csi-nodeplugin"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-rbd-plugin-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rbd-csi-nodeplugin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rbd-csi-nodeplugin
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-rbd-plugin-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rbd-csi-provisioner-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rbd-external-provisioner-runner"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-rbd-provisioner-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rbd-csi-provisioner-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rbd-external-provisioner-runner
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-rbd-provisioner-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SSQY/TMBCF/wqacxw2aZp6I3FAHDhwW7ghDmN73Jo6drDHQaLqf0dJN9KCKIKjZb+Z773nC4zEaJARhgtgCJGRXQx5OUb1lTRn4jq5WGtk9lS7+NoZGED7kpmSSHR0mdOqguquJn4PlMRxPsMA1hPxi7u5QT+dsKlefXDBvHl3m/z0P4MDjgQDJPpWKLPoOYT5n0R5Qk0bkzBksXiGawU60br6kxspM44TDKF4X4FHRX7N53cfIwY80hIOp0J/WX/CfFoi7Kl97Izp5KE7qMba1nTNrie73zWPvdZaqV4h7hecPxkUOgamsOKm6OmJ7Nri5N6nWKbluUJdY+FTTO7Haqc+y1y7CBWcXVhQt7SjX4if19zSeDE+l5sVGD5fNuVHSrPT9FbrWALDHcZDI5uu25PAB0uia9pWSNVrIaXqtOyt3GvzrN262L7WL52IzEdx2LVWql4+SJJw/XL9GQAA///s+fgVvwIAAA
+        objectset.rio.cattle.io/id: cluster-registration
+        objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+        objectset.rio.cattle.io/owner-name: request-6tnnv
+        objectset.rio.cattle.io/owner-namespace: fleet-default
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        fleet.cattle.io/managed: "true"
+        objectset.rio.cattle.io/hash: c6e294dd48747b1ff2d4136ef53196cccbb6baa5
+      name: request-6tnnv-content
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-content
+    subjects:
+      - kind: ServiceAccount
+        name: request-6tnnv-7181445e-a0fe-4122-8b6c-88b4c86f85cd
+        namespace: cluster-fleet-default-stg-732f8b6808e8
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SSP4/UMBDFvwqaOg5JLv8lCkRBQXfQIYqxPdk169jBHgeJ1X53lOxFOhCHoLTsN/N77/kKMzFqZITxCuicZ2TjXdyOXn4lxZE4D8bnCpkt5ca/NhpGUDZFpiACnUzksKsge1HjvzsK4rReYITJEvGzu7VEu5yxzF59ME6/eXef/Pg/gx3OBCME+pYosrDRxcs/ieKCig4moWnCZBluGahA++pPZqbIOC8wumRtBhYl2T2f333M6PBEWzgcEv1l/RnjGUbQXaP6QlfTQ12R1p2sJRWIstR9V8tGqmFoprZWG86fDArlHZPbcYO39EjT3uJi3geflu25RJVj4rMP5sduJ7/0MTceMrgYt6EeaXu7ET+tuafxbHxMdyswfr4eyo8UVqPorVI+OYYXGNti6GnASgxt24h66CbRl1Ut+qJpiNqOdDk9aY8ujq/1SydC0yqqdigKkkg4PMDty+1nAAAA///B9xEZvwIAAA
+        objectset.rio.cattle.io/id: cluster-registration
+        objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+        objectset.rio.cattle.io/owner-name: request-lsnsk
+        objectset.rio.cattle.io/owner-namespace: fleet-default
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        fleet.cattle.io/managed: "true"
+        objectset.rio.cattle.io/hash: d75c80d2f342edd7b4be0aab1d874b5bc995f64c
+      name: request-lsnsk-content
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-content
+    subjects:
+      - kind: ServiceAccount
+        name: request-lsnsk-6098e9a2-9665-497f-8124-8055ee67ed1f
+        namespace: cluster-fleet-default-dev-26900ebaea93
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SST4/TMBDFvwqacxySNv8aiQPiwIHbwg1xmIwnraljB3vclaj63VHSjbQgFrFHy34zv/eerzCxoEZB6K+AznlBMd7F5eiH70wSWfJgfE4oYjk3/q3R0APZFIWDCnw0UcKqguxFjX90HNTxcoYeRsssz+4uJdr5hGX25pNx+t2H++SH1wx2ODH0EPhH4ihqnh5j+C9RnJF4Y1KaR0xW4JYBBV5XfzETR8Fpht4lazOwOLBd8/nTx4QOj7yEIyHxP9afMJ6gh6ZrWtRlw7psuSoOLTaHYmhqaou6Hg7E2FHXFe2C8zeDirwTditu8JYfeFxbnM3H4NO8PB+Qckxy8sH8XO3k5y7mxkMGZ+MW1C1tbxfipzX3NJ6Nj+luBfqv1035mcPFEL8n8skJvMBY73XRFEOrqD5UqupQKxx2g6rG3Vju9jUR6ift1sX2tX7rRM1Bq1rrZt+NXI0jw+3b7VcAAAD//zx4Mp6/AgAA
+        objectset.rio.cattle.io/id: cluster-registration
+        objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+        objectset.rio.cattle.io/owner-name: request-pmwsr
+        objectset.rio.cattle.io/owner-namespace: fleet-default
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        fleet.cattle.io/managed: "true"
+        objectset.rio.cattle.io/hash: 6867ad16ed17e4097a690b65c7055b9cea8c8807
+      name: request-pmwsr-content
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-content
+    subjects:
+      - kind: ServiceAccount
+        name: request-pmwsr-53d060b7-c594-48ad-ab2b-4f2f1235ccad
+        namespace: cluster-fleet-default-prd-5dd638fe4ffe
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5RSPc/TMBD+K+jmOCRNmi+JATEwsL2wIYbL5dKaOnawzwVR9b+jpI1UIYpgsWSdn3u+fIGJBQcUhO4CaK0TFO1sWK6u/8okgSX12qWEIoZT7V7rATogE4OwV54POohfUZA8xbjvlr06nE/QwWiY5WF2ztHMR8yTVx+0Hd68u21++Z/FFieGDjx/ixxEzT9OU/VPoDAj8aZJGUdo4JoAeV6JP+mJg+A0Q2ejMQkY7Nms6fzuYkKLB16iER/5L+RHDEfoYF9Q3yAViHlNZV5wvauysSyHIc/HfjfmFRW7ph8XOX+yp8hZYSvL3DvDLzyuHc76vXdxXp73SClGOTqvf6520lMTUu0ggZO2i9Qta2cWxXeaWxYP60O8WYHu82VDfmR/1sRviVy0Ak80lmU/lMyFyohLVWb7VrXtPlNNU/UN1TUVLd2xWxPbx3po5H7mWAxVPWTYtC1cv1x/BQAA//901vtbvQIAAA
+        objectset.rio.cattle.io/id: cluster-registration
+        objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+        objectset.rio.cattle.io/owner-name: request-pxkm6
+        objectset.rio.cattle.io/owner-namespace: fleet-local
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        fleet.cattle.io/managed: "true"
+        objectset.rio.cattle.io/hash: 53cb8ac3aa17c413e7260f44dd11fb2f16c328bf
+      name: request-pxkm6-content
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: fleet-content
+    subjects:
+      - kind: ServiceAccount
+        name: request-pxkm6-44bd4ee3-0ce4-4059-9950-886b8c77c39c
+        namespace: cluster-fleet-local-local-1a3d67d0a899
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        rke2.io/bootstrapping: rbac-defaults
+      name: rke2-cloud-controller-manager
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rke2-cloud-controller-manager
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        rke2.io/bootstrapping: rbac-defaults
+      name: rke2-cloud-controller-manager-auth-delegator
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:auth-delegator
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: rke2-cloud-controller-manager
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-coredns
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: rke2-coredns
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: rke2-coredns
+        helm.sh/chart: rke2-coredns-1.24.002
+        k8s-app: kube-dns
+        kubernetes.io/cluster-service: "true"
+        kubernetes.io/name: CoreDNS
+      name: rke2-coredns-rke2-coredns
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rke2-coredns-rke2-coredns
+    subjects:
+      - kind: ServiceAccount
+        name: coredns
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-coredns
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: rke2-coredns
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: rke2-coredns-autoscaler
+        helm.sh/chart: rke2-coredns-1.24.002
+        k8s-app: kube-dns-autoscaler
+        kubernetes.io/cluster-service: "true"
+        kubernetes.io/name: CoreDNS
+      name: rke2-coredns-rke2-coredns-autoscaler
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rke2-coredns-rke2-coredns-autoscaler
+    subjects:
+      - kind: ServiceAccount
+        name: rke2-coredns-rke2-coredns-autoscaler
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-ingress-nginx
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: rke2-ingress-nginx
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: rke2-ingress-nginx
+        app.kubernetes.io/part-of: rke2-ingress-nginx
+        app.kubernetes.io/version: 1.7.1
+        helm.sh/chart: rke2-ingress-nginx-4.6.100
+      name: rke2-ingress-nginx
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rke2-ingress-nginx
+    subjects:
+      - kind: ServiceAccount
+        name: rke2-ingress-nginx
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-metrics-server
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: rke2-metrics-server
+        app.kubernetes.io/managed-by: Helm
+        chart: rke2-metrics-server-2.11.100-build2023051508
+        heritage: Helm
+        release: rke2-metrics-server
+      name: rke2-metrics-server:system:auth-delegator
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:auth-delegator
+    subjects:
+      - kind: ServiceAccount
+        name: rke2-metrics-server
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"rook-ceph-operator","operator":"rook","storage-backend":"ceph"},"name":"rook-ceph-global"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rook-ceph-global"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-system","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/part-of: rook-ceph-operator
+        operator: rook
+        storage-backend: ceph
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-global
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rook-ceph-global
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-system
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-ceph-mgr-cluster"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rook-ceph-mgr-cluster"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-mgr","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-mgr-cluster
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rook-ceph-mgr-cluster
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-mgr
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-ceph-object-bucket"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rook-ceph-object-bucket"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-system","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-object-bucket
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rook-ceph-object-bucket
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-system
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-ceph-osd"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rook-ceph-osd"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-osd","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-osd
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rook-ceph-osd
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-osd
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"rook-ceph-operator","operator":"rook","storage-backend":"ceph"},"name":"rook-ceph-system"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"rook-ceph-system"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-system","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/part-of: rook-ceph-operator
+        operator: rook
+        storage-backend: ceph
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-system
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: rook-ceph-system
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-system
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"rook-ceph-operator","operator":"rook","storage-backend":"ceph"},"name":"rook-ceph-system-psp"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"psp:rook"},"subjects":[{"kind":"ServiceAccount","name":"rook-ceph-system","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/part-of: rook-ceph-operator
+        operator: rook
+        storage-backend: ceph
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-ceph-system-psp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: psp:rook
+    subjects:
+      - kind: ServiceAccount
+        name: rook-ceph-system
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-csi-cephfs-plugin-sa-psp"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"psp:rook"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-cephfs-plugin-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-csi-cephfs-plugin-sa-psp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: psp:rook
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-cephfs-plugin-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-csi-cephfs-provisioner-sa-psp"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"psp:rook"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-cephfs-provisioner-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-csi-cephfs-provisioner-sa-psp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: psp:rook
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-cephfs-provisioner-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-csi-rbd-plugin-sa-psp"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"psp:rook"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-rbd-plugin-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-csi-rbd-plugin-sa-psp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: psp:rook
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-rbd-plugin-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"rook-csi-rbd-provisioner-sa-psp"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"psp:rook"},"subjects":[{"kind":"ServiceAccount","name":"rook-csi-rbd-provisioner-sa","namespace":"rook-ceph"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: rook-ceph-backup
+        velero.io/restore-name: rook-ceph-backup-20230811164855
+      name: rook-csi-rbd-provisioner-sa-psp
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: psp:rook
+    subjects:
+      - kind: ServiceAccount
+        name: rook-csi-rbd-provisioner-sa
+        namespace: rook-ceph
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nfs-subdir-external-provisioner
+        meta.helm.sh/release-namespace: longhorn-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: nfs-subdir-external-provisioner
+        app.kubernetes.io/managed-by: Helm
+        chart: nfs-subdir-external-provisioner-4.0.18
+        heritage: Helm
+        release: nfs-subdir-external-provisioner
+      name: run-nfs-subdir-external-provisioner
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nfs-subdir-external-provisioner-runner
+    subjects:
+      - kind: ServiceAccount
+        name: nfs-subdir-external-provisioner
+        namespace: longhorn-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: nfs-subdir-external-provisioner2
+        meta.helm.sh/release-namespace: longhorn-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: nfs-subdir-external-provisioner
+        app.kubernetes.io/managed-by: Helm
+        chart: nfs-subdir-external-provisioner-4.0.18
+        heritage: Helm
+        release: nfs-subdir-external-provisioner2
+      name: run-nfs-subdir-external-provisioner2
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: nfs-subdir-external-provisioner2-runner
+    subjects:
+      - kind: ServiceAccount
+        name: nfs-subdir-external-provisioner2
+        namespace: longhorn-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"snapshot-controller-role"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"snapshot-controller-runner"},"subjects":[{"kind":"ServiceAccount","name":"snapshot-controller","namespace":"kube-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: snapshot-controller-role
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: snapshot-controller-runner
+    subjects:
+      - kind: ServiceAccount
+        name: snapshot-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: system-node-default-psp-rolebinding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: global-unrestricted-psp-clusterrole
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:nodes
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      name: system-unrestricted-node-psp-rolebinding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system-unrestricted-psp-role
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:nodes
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:basic-user
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:basic-user
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:authenticated
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:attachdetach-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:attachdetach-controller
+    subjects:
+      - kind: ServiceAccount
+        name: attachdetach-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:certificate-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:certificate-controller
+    subjects:
+      - kind: ServiceAccount
+        name: certificate-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:clusterrole-aggregation-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:clusterrole-aggregation-controller
+    subjects:
+      - kind: ServiceAccount
+        name: clusterrole-aggregation-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:cronjob-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:cronjob-controller
+    subjects:
+      - kind: ServiceAccount
+        name: cronjob-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:daemon-set-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:daemon-set-controller
+    subjects:
+      - kind: ServiceAccount
+        name: daemon-set-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:deployment-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:deployment-controller
+    subjects:
+      - kind: ServiceAccount
+        name: deployment-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:disruption-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:disruption-controller
+    subjects:
+      - kind: ServiceAccount
+        name: disruption-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:endpoint-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:endpoint-controller
+    subjects:
+      - kind: ServiceAccount
+        name: endpoint-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:endpointslice-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:endpointslice-controller
+    subjects:
+      - kind: ServiceAccount
+        name: endpointslice-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:endpointslicemirroring-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:endpointslicemirroring-controller
+    subjects:
+      - kind: ServiceAccount
+        name: endpointslicemirroring-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:ephemeral-volume-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:ephemeral-volume-controller
+    subjects:
+      - kind: ServiceAccount
+        name: ephemeral-volume-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:expand-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:expand-controller
+    subjects:
+      - kind: ServiceAccount
+        name: expand-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:generic-garbage-collector
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:generic-garbage-collector
+    subjects:
+      - kind: ServiceAccount
+        name: generic-garbage-collector
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:horizontal-pod-autoscaler
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:horizontal-pod-autoscaler
+    subjects:
+      - kind: ServiceAccount
+        name: horizontal-pod-autoscaler
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:job-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:job-controller
+    subjects:
+      - kind: ServiceAccount
+        name: job-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:namespace-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:namespace-controller
+    subjects:
+      - kind: ServiceAccount
+        name: namespace-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:node-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:node-controller
+    subjects:
+      - kind: ServiceAccount
+        name: node-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:persistent-volume-binder
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:persistent-volume-binder
+    subjects:
+      - kind: ServiceAccount
+        name: persistent-volume-binder
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:pod-garbage-collector
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:pod-garbage-collector
+    subjects:
+      - kind: ServiceAccount
+        name: pod-garbage-collector
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:pv-protection-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:pv-protection-controller
+    subjects:
+      - kind: ServiceAccount
+        name: pv-protection-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:pvc-protection-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:pvc-protection-controller
+    subjects:
+      - kind: ServiceAccount
+        name: pvc-protection-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:replicaset-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:replicaset-controller
+    subjects:
+      - kind: ServiceAccount
+        name: replicaset-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:replication-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:replication-controller
+    subjects:
+      - kind: ServiceAccount
+        name: replication-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:resourcequota-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:resourcequota-controller
+    subjects:
+      - kind: ServiceAccount
+        name: resourcequota-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:root-ca-cert-publisher
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:root-ca-cert-publisher
+    subjects:
+      - kind: ServiceAccount
+        name: root-ca-cert-publisher
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:route-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:route-controller
+    subjects:
+      - kind: ServiceAccount
+        name: route-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:service-account-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:service-account-controller
+    subjects:
+      - kind: ServiceAccount
+        name: service-account-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:service-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:service-controller
+    subjects:
+      - kind: ServiceAccount
+        name: service-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:statefulset-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:statefulset-controller
+    subjects:
+      - kind: ServiceAccount
+        name: statefulset-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:ttl-after-finished-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:ttl-after-finished-controller
+    subjects:
+      - kind: ServiceAccount
+        name: ttl-after-finished-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:controller:ttl-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:controller:ttl-controller
+    subjects:
+      - kind: ServiceAccount
+        name: ttl-controller
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:discovery
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:discovery
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:authenticated
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:kube-controller-manager
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:kube-controller-manager
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:kube-controller-manager
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:kube-dns
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:kube-dns
+    subjects:
+      - kind: ServiceAccount
+        name: kube-dns
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        rke2.io/bootstrapping: rbac-defaults
+      name: system:kube-proxy
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:kube-proxy
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:kube-proxy
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:kube-scheduler
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:kube-scheduler
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:kube-scheduler
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:monitoring
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:monitoring
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:monitoring
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:node
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:node
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:node-proxier
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:node-proxier
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:kube-proxy
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:public-info-viewer
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:public-info-viewer
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:authenticated
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:unauthenticated
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        rke2.io/bootstrapping: rbac-defaults
+      name: system:rke2-controller
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:rke2-controller
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:rke2-controller
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: rke2-metrics-server
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app: rke2-metrics-server
+        app.kubernetes.io/managed-by: Helm
+        chart: rke2-metrics-server-2.11.100-build2023051508
+        heritage: Helm
+        release: rke2-metrics-server
+      name: system:rke2-metrics-server
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:rke2-metrics-server
+    subjects:
+      - kind: ServiceAccount
+        name: rke2-metrics-server
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:service-account-issuer-discovery
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:service-account-issuer-discovery
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: Group
+        name: system:serviceaccounts
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        kubernetes.io/bootstrapping: rbac-defaults
+      name: system:volume-scheduler
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:volume-scheduler
+    subjects:
+      - apiGroup: rbac.authorization.k8s.io
+        kind: User
+        name: system:kube-scheduler
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"default","app.kubernetes.io/part-of":"tekton-pipelines"},"name":"tekton-pipelines-controller-cluster-access"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"tekton-pipelines-controller-cluster-access"},"subjects":[{"kind":"ServiceAccount","name":"tekton-pipelines-controller","namespace":"cicd"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: default
+        app.kubernetes.io/part-of: tekton-pipelines
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: tekton-pipelines-controller-cluster-access
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: tekton-pipelines-controller-cluster-access
+    subjects:
+      - kind: ServiceAccount
+        name: tekton-pipelines-controller
+        namespace: cicd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"default","app.kubernetes.io/part-of":"tekton-pipelines"},"name":"tekton-pipelines-controller-tenant-access"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"tekton-pipelines-controller-tenant-access"},"subjects":[{"kind":"ServiceAccount","name":"tekton-pipelines-controller","namespace":"cicd"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: default
+        app.kubernetes.io/part-of: tekton-pipelines
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: tekton-pipelines-controller-tenant-access
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: tekton-pipelines-controller-tenant-access
+    subjects:
+      - kind: ServiceAccount
+        name: tekton-pipelines-controller
+        namespace: cicd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"resolvers","app.kubernetes.io/instance":"default","app.kubernetes.io/part-of":"tekton-pipelines"},"name":"tekton-pipelines-resolvers"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"tekton-pipelines-resolvers-resolution-request-updates"},"subjects":[{"kind":"ServiceAccount","name":"tekton-pipelines-resolvers","namespace":"cicd"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: resolvers
+        app.kubernetes.io/instance: default
+        app.kubernetes.io/part-of: tekton-pipelines
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: tekton-pipelines-resolvers
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: tekton-pipelines-resolvers-resolution-request-updates
+    subjects:
+      - kind: ServiceAccount
+        name: tekton-pipelines-resolvers
+        namespace: cicd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"webhook","app.kubernetes.io/instance":"default","app.kubernetes.io/part-of":"tekton-pipelines"},"name":"tekton-pipelines-webhook-cluster-access"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"tekton-pipelines-webhook-cluster-access"},"subjects":[{"kind":"ServiceAccount","name":"tekton-pipelines-webhook","namespace":"cicd"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/component: webhook
+        app.kubernetes.io/instance: default
+        app.kubernetes.io/part-of: tekton-pipelines
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: tekton-pipelines-webhook-cluster-access
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: tekton-pipelines-webhook-cluster-access
+    subjects:
+      - kind: ServiceAccount
+        name: tekton-pipelines-webhook
+        namespace: cicd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        component: velero
+      name: velero
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: velero
+        namespace: velero
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"zcp-backup"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cluster-admin"},"subjects":[{"kind":"ServiceAccount","name":"zcp-backup","namespace":"zcp-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: zcp-backup
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: zcp-backup
+        namespace: zcp-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: zcp-cicd
+        meta.helm.sh/release-namespace: cicd
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: zcp-cicd
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: zcp-cicd
+        app.kubernetes.io/version: v2.3.0
+        cloudzcp.io/zcp-system-admin: "yes"
+        helm.sh/chart: zcp-cicd-2.3.0
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+      name: zcp-cicd
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: zcp-cicd
+        namespace: cicd
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: zcp-kubed
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: zcp-kubed
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kubed
+        app.kubernetes.io/version: v0.13.2
+        helm.sh/chart: kubed-v0.13.2
+        velero.io/backup-name: velerotest
+        velero.io/restore-name: velerotest-restore
+      name: zcp-kubed
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: zcp-kubed
+    subjects:
+      - kind: ServiceAccount
+        name: zcp-kubed
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        meta.helm.sh/release-name: zcp-kubed
+        meta.helm.sh/release-namespace: kube-system
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        app.kubernetes.io/instance: zcp-kubed
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kubed
+        app.kubernetes.io/version: v0.13.2
+        helm.sh/chart: kubed-v0.13.2
+        velero.io/backup-name: velerotest
+        velero.io/restore-name: velerotest-restore
+      name: zcp-kubed-apiserver-auth-delegator
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:auth-delegator
+    subjects:
+      - kind: ServiceAccount
+        name: zcp-kubed
+        namespace: kube-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: 230811-cp-backup
+        velero.io/restore-name: 230811-cp-backup-20230811183930
+        zcp-mcm-default: "true"
+      name: zcp-mcm-backend-service-admin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: zcp-mcm-backend-service-admin
+        namespace: zcp-system
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"zdb-system-account"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"cluster-admin"},"subjects":[{"kind":"ServiceAccount","name":"zdb-system-account","namespace":"zdb-system"}]}
+      finalizers:
+        - wrangler.cattle.io/auth-prov-v2-crb
+      labels:
+        velero.io/backup-name: console-backup
+        velero.io/restore-name: console-backup-20230811163635
+      name: zdb-system-account
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: zdb-system
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: nsm-cloud-system
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: iam
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: cicd
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: apim-dev
+      - kind: ServiceAccount
+        name: zdb-system-account
+        namespace: console
+kind: List
+metadata:
+  resourceVersion: ""

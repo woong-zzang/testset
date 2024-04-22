@@ -1,0 +1,118 @@
+apiVersion: v1
+items:
+  - apiVersion: batch/v1
+    kind: CronJob
+    metadata:
+      name: cron-logging-trim
+      namespace: longhorn-system
+    spec:
+      concurrencyPolicy: Allow
+      failedJobsHistoryLimit: 1
+      jobTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          template:
+            metadata:
+              creationTimestamp: null
+            spec:
+              containers:
+                - command:
+                    - /bin/sh
+                    - -c
+                    - |
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-d8c04e4f-f2f4-49ac-a4b8-f8585d839f69?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-3d0e1ef8-595b-4ab2-ac35-4f9feeb55279?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-a4e977a9-913f-42dc-a824-7372847651aa?action=trimFilesystem
+                  image: rancher/curl
+                  imagePullPolicy: IfNotPresent
+                  name: logging-logging-trim
+                  resources: {}
+                  terminationMessagePath: /dev/termination-log
+                  terminationMessagePolicy: File
+              dnsPolicy: ClusterFirst
+              restartPolicy: OnFailure
+              schedulerName: default-scheduler
+              securityContext: {}
+              terminationGracePeriodSeconds: 30
+      schedule: 0 * * * *
+      successfulJobsHistoryLimit: 3
+      suspend: false
+  - apiVersion: batch/v1
+    kind: CronJob
+    metadata:
+      name: cron-minio-trim
+      namespace: longhorn-system
+    spec:
+      concurrencyPolicy: Allow
+      failedJobsHistoryLimit: 1
+      jobTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          template:
+            metadata:
+              creationTimestamp: null
+            spec:
+              containers:
+                - command:
+                    - /bin/sh
+                    - -c
+                    - |
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-af7a35e9-5eda-44b0-9db9-f9839366dc24?action=trimFilesystem
+                  image: rancher/curl
+                  imagePullPolicy: IfNotPresent
+                  name: cron-minio-trim
+                  resources: {}
+                  terminationMessagePath: /dev/termination-log
+                  terminationMessagePolicy: File
+              dnsPolicy: ClusterFirst
+              restartPolicy: OnFailure
+              schedulerName: default-scheduler
+              securityContext: {}
+              terminationGracePeriodSeconds: 30
+      schedule: 0 * * * *
+      successfulJobsHistoryLimit: 3
+      suspend: false
+  - apiVersion: batch/v1
+    kind: CronJob
+    metadata:
+      name: cron-monitoring-trim
+      namespace: longhorn-system
+    spec:
+      concurrencyPolicy: Allow
+      failedJobsHistoryLimit: 1
+      jobTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          template:
+            metadata:
+              creationTimestamp: null
+            spec:
+              containers:
+                - command:
+                    - /bin/sh
+                    - -c
+                    - |
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-6d8dcad0-993c-44de-8947-92a40e911d82?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-895c72f5-0a58-436e-9ecc-bc8728e1148a?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-b589b0c6-ad36-437b-8f2a-cb55554176f6?action=trimFilesystem
+                      curl -XPOST http://longhorn-frontend.longhorn-system.svc.cluster.local/v1/volumes/pvc-ff170cc9-8e77-4a67-b21f-31cd924f9d6a?action=trimFilesystem
+                  image: rancher/curl
+                  imagePullPolicy: IfNotPresent
+                  name: cron-monitoring-trim
+                  resources: {}
+                  terminationMessagePath: /dev/termination-log
+                  terminationMessagePolicy: File
+              dnsPolicy: ClusterFirst
+              restartPolicy: OnFailure
+              schedulerName: default-scheduler
+              securityContext: {}
+              terminationGracePeriodSeconds: 30
+      schedule: 0 * * * *
+      successfulJobsHistoryLimit: 3
+      suspend: false
+kind: List
+metadata:
+  resourceVersion: ""

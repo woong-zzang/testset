@@ -1,0 +1,53 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"minio-api-service","namespace":"minio"},"spec":{"ports":[{"port":9000,"protocol":"TCP","targetPort":9000}],"selector":{"role":"osd"},"type":"ClusterIP"}}
+      name: minio-api-service
+      namespace: minio
+    spec:
+      clusterIP: 172.21.181.19
+      clusterIPs:
+        - 172.21.181.19
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - port: 9000
+          protocol: TCP
+          targetPort: 9000
+      selector:
+        role: osd
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"minio-service","namespace":"minio"},"spec":{"ports":[{"port":9090,"protocol":"TCP","targetPort":9090}],"selector":{"role":"osd"},"type":"ClusterIP"}}
+      name: minio-service
+      namespace: minio
+    spec:
+      clusterIP: 172.21.186.197
+      clusterIPs:
+        - 172.21.186.197
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - port: 9090
+          protocol: TCP
+          targetPort: 9090
+      selector:
+        role: osd
+      sessionAffinity: None
+      type: ClusterIP
+kind: List
+metadata:
+  resourceVersion: ""
